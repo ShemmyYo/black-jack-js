@@ -1,4 +1,5 @@
 :root {
+    --off-white: rgb(245, 245, 245);
     --gold: rgb(218, 164, 32);
 }
 
@@ -9,16 +10,20 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    color: whitesmoke;
-
+    color: var(--off-white);
 }
 
 h1 {
     color: var(--gold);
 }
 
+
+#main-wrapper {
+    padding: 10%;
+}
+
 /* Welcome screen to be implemented at later stage */
-/* #main-wrapper {
+/* #main-wrapper-inner {
     visibility:hidden;
 } */
 /* #logo-empty {
@@ -31,4 +36,29 @@ h1 {
 
 #message-el {
     font-style: italic;
+}
+
+button {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    padding: 10px;
+    background-color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px black;
+}
+
+
+@media screen and (max-width: 300px) {
+
+    body {
+        background-image: url("../images/blackjack-bg.jpg");
+        background-size:auto ;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: auto;
+        text-align: center;
+    };
 }
