@@ -4,15 +4,30 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
     background-image: url("../images/blackjack-bg.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     color: whitesmoke;
+
 }
 
 h1 {
     color: var(--gold);
 }
+
+/* Welcome screen to be implemented at later stage */
+/* #main-wrapper {
+    visibility:hidden;
+} */
+/* #logo-empty {
+    background-image: url("../images/blackjack-entry-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
 
 #message-el {
     font-style: italic;
