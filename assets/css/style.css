@@ -38,18 +38,24 @@ h1 {
     font-style: italic;
 }
 
+#bttn-wrapper {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+}
+
 button {
     color: black;
     font-weight: bold;
     text-transform: uppercase;
     width: 200px;
     padding: 10px;
+    margin-bottom: 10px;
     background-color: var(--gold);
     border: none;
     border-radius: 8px;
     box-shadow: 5px 5px 10px black;
 }
-
 
 @media screen and (max-width: 300px) {
 
