@@ -1,0 +1,19 @@
+:root {
+    --gold: rgb(218, 164, 32);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("../images/blackjack-bg.jpg");
+    background-size: cover;
+    text-align: center;
+    color: whitesmoke;
+}
+
+h1 {
+    color: var(--gold);
+}
+
+#message-el {
+    font-style: italic;
+}
