@@ -6,9 +6,19 @@
 // let card4 = getRandomCard();
 // let card5 = getRandomCard();
 
+document.getElementById("bttn-card").style.visibility = "hidden";
+
+let player = {
+    name: "Shemmy",
+    credit: 99
+};
+
+let playerEl = document.getElementById("player-el");
+playerEl.innerHTML = player.name + " Credit: " + player.credit;
+
 let cards = [];
 let sum = 0;
-let hasBlackJack = false;
+let hasBlackjack = false;
 let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
@@ -34,13 +44,18 @@ function getRandomCard() {
 };
 
 function startGame() {
-    isAlive = true
-    let card1 = getRandomCard()
-    let card2 = getRandomCard()
-    cards = [card1, card2]
-    sum = card1 + card2
-    game();
-}
+        if (sum === 0) {
+        isAlive = true
+        let card1 = getRandomCard()
+        let card2 = getRandomCard()
+        cards = [card1, card2]
+        sum = card1 + card2
+        game();
+
+        document.getElementById("bttn-start").style.visibility = "hidden";
+        document.getElementById("bttn-card").style.visibility = "visible";
+    };
+};
 
 function game() {
 
@@ -64,7 +79,7 @@ function game() {
 
 function newCard() {
     
-    if (isAlive === true && hasBlackJack === false) { 
+    if (isAlive === true && hasBlackjack === false) { 
         let card = getRandomCard();
         sum += card;
         cards.push(card);

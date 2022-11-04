@@ -10,13 +10,14 @@
 <body>
     <div id="main-wrapper">
         <h1>Blackjack</h1>
+        <p id="player-el">Player Name:</p>
         <p id="message-el">Want to play a round?</p>
         <p id="cards-el"></p>
         <p id="sum-el"></p>
         <div id="logo-empty"></div>
         <div id="bttn-wrapper">
-            <button onclick="startGame()">Start Game</button>
-            <button onclick="newCard()">New Card</button>
+            <button id="bttn-start" onclick="startGame()">Start Game</button>
+            <button id="bttn-card"onclick="newCard()">New Card</button>
         </div>
     </div>
     <script src="assets/js/script.js"></script>
