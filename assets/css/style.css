@@ -38,6 +38,26 @@ h1 {
     font-style: italic;
 }
 
+/* Name input + button */
+
+#logo-empty #input-save-name {
+    color: black;
+    text-transform: capitalize;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px black;
+} 
+
+#bttn-save-name {
+
+}
+
+
+/* Buttons */
 #bttn-wrapper {
     position: fixed;
     width: 100%;
@@ -68,4 +88,11 @@ button {
         height: auto;
         text-align: center;
     };
+}
+
+@media screen and (min-width: 600px) {
+
+    body {
+        font-size: 200%;
+    }
 }
