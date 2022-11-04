@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     color: var(--off-white);
+    box-sizing: border-box;
 }
 
 h1 {
@@ -33,6 +34,9 @@ h1 {
     background-repeat: no-repeat;
 } */
 
+#player-el{
+    font-size: larger;
+}
 
 #message-el {
     font-style: italic;
@@ -43,19 +47,14 @@ h1 {
 #logo-empty #input-save-name {
     color: black;
     text-transform: capitalize;
-    width: 200px;
+    width: 180px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 5%;
     background-color: var(--gold);
     border: none;
     border-radius: 8px;
     box-shadow: 5px 5px 10px black;
 } 
-
-#bttn-save-name {
-
-}
-
 
 /* Buttons */
 #bttn-wrapper {
@@ -63,6 +62,12 @@ h1 {
     width: 100%;
     bottom: 10%;
     left: 0;
+}
+
+#bttn-start {
+    display: block;
+    min-width: 404px;
+    margin-left: calc(50% - 202px);
 }
 
 button {
@@ -78,17 +83,41 @@ button {
     box-shadow: 5px 5px 10px black;
 }
 
-@media screen and (max-width: 300px) {
+#footer-wrapper {
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#footer-wrapper p {
+    display: inline-block;
+    font-size: 80%;
+    color: whitesmoke;
+    width: 100px;
+    margin: 0 5% 10px 5%;
+}
+
+@media screen and (max-width: 400px) {
 
     body {
         background-image: url("../images/blackjack-bg.jpg");
-        background-size:auto ;
+        background-size:cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: auto;
+        height: 100%;
         text-align: center;
-    };
-}
+    }
+
+    #bttn-card,
+    #bttn-save,
+    #bttn-start,
+    #bttn-save-name {
+        display: block;
+        width: 400px;
+        margin-left: calc(50% - 200px);
+    }
+};
 
 @media screen and (min-width: 600px) {
 
