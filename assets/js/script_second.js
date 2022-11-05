@@ -4,19 +4,14 @@ document.getElementById("bttn-save").style.visibility = "hidden";
 document.getElementById("sum-el").style.visibility = "hidden";
 document.getElementById("credit-el").style.visibility = "hidden";
 document.getElementById("round-el").style.visibility = "hidden";
-//document..getElementById("card-1").style.visibility = "hidden";
-//document.getElementById("card-2").style.visibility = "hidden";
-//document.getElementById("card-3").style.visibility = "hidden";
-//document.getElementById("card-4").style.visibility = "hidden";
-//document.getElementById("card-5").style.visibility = "hidden";
 
 let player = {};
 let rounds = 1;
 let isAlive = false;
 let hasBlackJack = false;
 
-let playerMsg = "<br><b>Welcome Stranger! <br> Wanna play a round?</b>";
-let message = "<br><h6>Type in your name first and click <br> >>> SAVE YOUR NAME <<<</h6>";
+let playerMsg = "<br><b>Welcome Stranger! Wanna play a round?</b>";
+let message = "<br><h6>Type in your name first and click >>> SAVE YOUR NAME <<<</h6>";
 let cards = [];
 let sum = 0;
 let credit = "";

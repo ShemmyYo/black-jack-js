@@ -8,11 +8,6 @@
     <title>Blackjack</title> 
 </head>
 <body>
-    <div id="back-wrapper">
-        <div id="card-back" class="cards">
-            <img src="assets/images/deck/back.png">
-        </div>
-    </div>
     <div id="main-wrapper">
         <h1>Blackjack</h1>
         <p id="player-el"></p>
@@ -22,27 +17,11 @@
             <input id="input-save-name" type="text" required>
             <button id="bttn-save-name" onclick="newPlayerGame()">Save Your Name</button>
         </div>
-        <div id="deck-wrapper">
-            <div id="card-1" class="cards">
-                <img src="assets/images/deck/back.png">
-            </div>
-            <div id="card-2" class="cards">
-                <img src="assets/images/deck/back.png">
-            </div>
-            <div id="card-3" class="cards">
-                <img src="assets/images/deck/back.png">
-            </div>
-            <div id="card-4" class="cards">
-                <img src="assets/images/deck/back.png">
-            </div>
-            <div id="card-5" class="cards">
-                <img src="assets/images/deck/back.png">
-            </div>
-        </div>
         <div id="bttn-wrapper">
             <button id="bttn-start" onclick="startGame()">Start New Game</button>
             <button id="bttn-card" onclick="newCard()">Draw a card</button>
             <button id="bttn-save" onclick="saveGame()">Save Credit</button>
+            
         </div>
         <footer id="footer-wrapper">
             <p id="sum-el"></p>
