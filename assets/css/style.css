@@ -9,6 +9,7 @@ body {
     background-image: url("../images/blackjack-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 900px;
     text-align: center;
     color: var(--off-white);
     box-sizing: border-box;
@@ -25,38 +26,33 @@ h1 {
 
 #main-wrapper {
     margin: 0 auto;
+    height: 100%;
     padding: 5% auto;
 }
 
-/* Welcome screen to be implemented at later stage */
-/* #main-wrapper-inner {
-    visibility:hidden;
-} */
-/* #logo-empty {
-    background-image: url("../images/blackjack-entry-bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
-
-#player-el{
-    font-size: larger;
+#msg-wrapper {
+    height: 30%;
 }
 
-#message-el {
+#player-el p {
+    height: 200px;
+    font-size: larger;
+    margin: auto;
+}
+
+#message-el p {
+    height: 100px;
     font-style: italic;
+    margin: auto;
 }
 
 /* Name input + button */
-
-#logo-empty{
-    margin: 5% 0;
-}
 
 #logo-empty #input-save-name {
     color: black;
     text-transform: capitalize;
     width: 180px;
+    max-height: 100px;
     padding: 10px 0;
     margin: 5% 0;
     background-color: var(--gold);
@@ -96,10 +92,13 @@ h1 {
 }
 
 #deck-wrapper {
+    position: fixed;
+    bottom: 150px;
+    left: 0;
     display: flex;
     width: 100%;
+    height: auto;
     margin: auto;
-    padding: 10% 0;
 }
 
 #deck-wrapper .cards {
@@ -123,15 +122,18 @@ h1 {
 /* Buttons */
 #bttn-wrapper {
     position: fixed;
-    width: 100%;
-    bottom: 10%;
+    bottom: 30px;
     left: 0;
+    width: 100%;
+    height: 120px;
+    margin: auto;
 }
 
 #bttn-start {
     display: block;
     min-width: 404px;
     margin-left: calc(50% - 202px);
+    margin-top: 20px;
 }
 
 button {
@@ -140,7 +142,6 @@ button {
     text-transform: uppercase;
     width: 200px;
     padding: 10px;
-    margin-bottom: 10px;
     background-color: var(--gold);
     border: none;
     border-radius: 8px;
@@ -149,18 +150,23 @@ button {
 
 #footer-wrapper {
     position:fixed;
-    width: 100%;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: darkgreen;
 }
 
 #footer-wrapper p {
     display: inline-block;
-    font-size: 80%;
+    font-size: 70%;
     color: whitesmoke;
-    width: 100px;
-    margin: 0 5% 10px 5%;
+    width: 25%;
+    height: 30px;
+    margin: 0 2% 10px 3%;
+    padding: auto;
 }
+
 
 
 
@@ -176,7 +182,7 @@ button {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        min-width: 100%;
+        min-height: 740px;
         text-align: center;
     }
   
@@ -198,17 +204,24 @@ button {
     }
 
     #deck-wrapper {
+        height: 30%;
+        width: 100%;
+        margin: 0;
         padding: 6% 0;
+    }
+
+    #bttn-wrapper {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        height: 170px;
+        margin: auto;
     }
 }
 
     @media screen and (min-width: 460px) and (max-width: 680px) {  
-        
-    #logo-empty{
-        margin: 0;
-        padding: 0;
-    }
-  
+         
     #back-wrapper #card-back {
         position: absolute;
         top: -30px;
@@ -234,13 +247,21 @@ button {
         width: 180px;
     }
   
+    /* #footer-wrapper {
+        position:fixed;
+        width: 100%;
+        height: 30px;
+        bottom: 0;
+        left: 0;
+    }
+
     #footer-wrapper p {
         display: inline-block;
-        font-size: 60%;
+        font-size: 50%;
         color: whitesmoke;
-        width: 100px;
+        width: 80px;
         margin: 0 5% 10px 5%;
-    }
+    } */
 
 }
 
@@ -250,7 +271,11 @@ button {
 
 @media screen and (min-width: 900px) {
 
-    /* body {
-        font-size: 200%;
-    } */
+    body {
+        font-size: 150%;
+    }
+
+    #logo-empty{
+        max-height: 100px;
+    }
 }

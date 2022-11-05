@@ -15,8 +15,8 @@ let rounds = 1;
 let isAlive = false;
 let hasBlackJack = false;
 
-let playerMsg = "<br><b>Welcome Stranger! <br> Wanna play a round?</b>";
-let message = "<br><h6>Type in your name first and click <br> >>> SAVE YOUR NAME <<<</h6>";
+let playerMsg = "<hr><b>Welcome Stranger! <br> Wanna play a round?</b>";
+let message = "<br><h6>Type in your name first and click <br> >>> SAVE YOUR NAME <<<</h6><hr>";
 let cards = [];
 let sum = 0;
 let credit = "";
