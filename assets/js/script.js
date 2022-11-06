@@ -62,6 +62,7 @@ function newPlayerGame() { //function called on bttn click
     roundEl.innerHTML = "Round No.: " + rounds;
 }
 
+
 function startGame() {
     sum = 0;
     cards = [];
@@ -204,11 +205,27 @@ function getRandomCard() {
     return cardValue;
 }
 
+function createDeck() {
+   
+    let colors = ["H", "C", "D", "S"];
+    let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    var cardsDeck = [];
 
-    // let cardsDeck = [
+    for (let color = 0; color < 4; color++) {
+        for (let rank = 0; rank < ranks.length; rank++) {
+            cardsDeck.push(ranks[rank] + colors[color]);
+        }
+    }
+
+    console.log(cardsDeck);
+
+    
+
+    // const cardsDeck = [
     //     {
     //         name:2,
-    //         value: 2
+    //         value: 2,
+
     //     },
     //     {
     //         name:3,
@@ -260,7 +277,7 @@ function getRandomCard() {
     //     },
     // ];
 
-
+}
 
     // let card1 = getRandomCard();
 // let card2 = getRandomCard();
