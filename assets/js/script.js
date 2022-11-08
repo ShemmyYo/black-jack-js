@@ -1,4 +1,4 @@
-document.getElementById("bttn-card").style.visibility = "hidden";
+// document.getElementById("bttn-card").style.visibility = "hidden";
 
 let player = {
     name: "Shemmy",
@@ -16,61 +16,203 @@ let cardsEl = document.getElementById("cards-el");
 let playerEl = document.getElementById("player-el");
 playerEl.innerHTML = player.name + " Credit: " + player.credit;
 
+
+let dealerSum = 0;
+let playerSum = 0;
+
+let cardsDeck;
+let hidden;
+
+var canHit = true;
+
+window.onload = function() {
+    createDeck();
+    shuffleDeck();
+    startGame();
+};
+
+function createDeck() {
+    let colors = ["H", "C", "D", "S"];
+    let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    cardsDeck = [];
+
+    for (let color = 0; color < 4; color++) {
+        for (let rank = 0; rank < ranks.length; rank++) {
+            cardsDeck.push(ranks[rank] + "-" + colors[color]);
+        }
+    }
+    console.log(cardsDeck);
+}
+
+function shuffleDeck() {
+    for (let i = 0; i < 52; i++) {
+        let j = Math.floor(Math.random() * 52);
+        let temp = cardsDeck[i];
+        cardsDeck[i] = cardsDeck[j];
+        cardsDeck[j] = temp;
+        }
+    console.log(cardsDeck);
+    }
+
+function restartGame() {
+    cardsDeck = [];
+    playerSum = 0;
+    dealerSum = 0;
+    // document.getElementById("dealer-cards") 
+    canHit = true;
+    createDeck();
+    shuffleDeck();
+    startGame();
+}
+
 function startGame() {
-        if (sum === 0) {
-        isActive = true;
-        hasBlackJack = false;
-        let card1 = getRandomCard();
-        let card2 = getRandomCard();
-        cards = [card1, card2];
-        sum = card1 + card2;
+    hidden = cardsDeck.pop();
+    dealerSum += getValue(hidden);
+    // console.log(hidden);
+    // console.log(dealerSum);
 
-        game();
-
-        document.getElementById("bttn-start").style.visibility = "hidden";
-        document.getElementById("bttn-card").style.visibility = "visible";
-        document.getElementById("bttn-save").style.visibility = "visible";
+    while (dealerSum < 17 ) {
+        let cardImg = document.createElement("img");
+        let card = cardsDeck.pop();
+        cardImg.src = "./assets/images/deck/" + card + ".png";
+        dealerSum += getValue(card);
+        document.getElementById("dealer-cards").append(cardImg);
     }
+    console.log("D: " + dealerSum);
+
+    for (let i = 0; i < 2; i++) {
+        let cardImg = document.createElement("img");
+        let card = cardsDeck.pop();
+        cardImg.src = "./assets/images/deck/" + card + ".png";
+        playerSum += getValue(card);
+        document.getElementById("your-cards").append(cardImg);
+    }
+    console.log("P: " + playerSum);
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stay").addEventListener("click", stay);
 }
 
-function game() {
+function hit() {
+    if (!canHit) {
+        return;
+    }
+    let cardImg = document.createElement("img");
+    let card = cardsDeck.pop();
+    cardImg.src = "./assets/images/deck/" + card + ".png";
+    playerSum += getValue(card);
+    document.getElementById("your-cards").append(cardImg);
 
-    cardsEl.innerHTML = "Cards: ";
-
-    for (let i = 0; i < cards.length; i++) {
-    cardsEl.innerHTML += cards[i] + " ";
-
-    if (sum <= 20) {
+    if (playerSum <= 20) {
         message = "Do you want to draw another card?";
-    } else if (sum === 21) {
+    } else if (playerSum === 21) {
         message = "Congratulations!!! You've got a Blackjack!";
-        hasBlackJack = true;        
+        hasBlackJack = true;
+        canHit = false;        
     } else {
-        message = "You loose!";
-        isActive = false;
-    }    
+        message = "";
+        canHit = false;
+        stay();
+    }
     messageEl.innerHTML = message;
-    }
 }
 
-function newCard() {
-    if (isActive === true && hasBlackJack === false) { 
-        let card = getRandomCard();
-        sum += card;
-        cards.push(card);
-        game();
+function stay() {
+    canHit = false;
+    document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
+
+    if (playerSum === 21) {
+        message = "Congratulations!!! You've got a Blackjack!";
+    } else if (playerSum > 21) {
+        message = "You Lose!";
+    } else if (dealerSum > 21) {
+        message = "You Win!";
+    } else if (playerSum == dealerSum) {
+        message = "Tie!"
+    } else if (playerSum > dealerSum) {
+        message = "You Win Chicken!"
+    } else if (playerSum < dealerSum){
+        message = "You Lose Chicken!"
     }
+    messageEl.innerHTML = message;
 }
 
-function getRandomCard() {    
-    let cardValue = Math.floor( Math.random()*13 ) + 1;
+function getValue(card) {
+    let data = card.split("-");
+    let value = data[0];
+
+    if (isNaN(value)) {
+        if (value == "A") {
+            return 11;
+        } 
+        return 10;
+    }
+    return parseInt(value);
+}
+
+
+
+
+
+
+
+
+
+
+// function startGame2() {
+//         if (sum === 0) {
+//         isActive = true;
+//         hasBlackJack = false;
+//         let card1 = getRandomCard();
+//         let card2 = getRandomCard();
+//         cards = [card1, card2];
+//         sum = card1 + card2;
+
+//         game();
+
+//         // document.getElementById("bttn-start").style.visibility = "hidden";
+//         // document.getElementById("bttn-card").style.visibility = "visible";
+//         // document.getElementById("bttn-save").style.visibility = "visible";
+//     }
+// }
+
+// function game() {
+
+//     cardsEl.innerHTML = "Cards: ";
+
+//     for (let i = 0; i < cards.length; i++) {
+//     cardsEl.innerHTML += cards[i] + " ";
+
+//     if (sum <= 20) {
+//         message = "Do you want to draw another card?";
+//     } else if (sum === 21) {
+//         message = "Congratulations!!! You've got a Blackjack!";
+//         hasBlackJack = true;        
+//     } else {
+//         message = "You loose!";
+//         isActive = false;
+//     }    
+//     messageEl.innerHTML = message;
+//     }
+// }
+
+// function newCard() {
+//     if (isActive === true && hasBlackJack === false) { 
+//         let card = getRandomCard();
+//         sum += card;
+//         cards.push(card);
+//         game();
+//     }
+// }
+
+// function getRandomCard() {    
+//     let cardValue = Math.floor( Math.random()*13 ) + 1;
     
-    if (cardValue === 1) {
-        cardValue = 11;
-    } else if (cardValue > 10 ) {
-        cardValue = 10;
-    } else {
-        return cardValue;
-    }
-    return cardValue;
-}
+//     if (cardValue === 1) {
+//         cardValue = 11;
+//     } else if (cardValue > 10 ) {
+//         cardValue = 10;
+//     } else {
+//         return cardValue;
+//     }
+//     return cardValue;
+// }

@@ -22,7 +22,6 @@
                 </div>
 
                 <div id="inner-game-box-msg">
-                    <p>messages</p>
                     <h1>Blackjack</h1>       
                     <p id="player-el">Player Name:</p>
                     <p id="message-el">Want to play a round?</p>
@@ -40,8 +39,9 @@
 
             </div>
             <div id="bttn-wrapper">
-                <button id="bttn-start" onclick="startGame()">Start New Game</button>
-                <button id="bttn-card" onclick="newCard()">Draw a card</button>
+                <button id="hit">Draw a Card</button>
+                <button id="stay">Stay</button>
+                <button id="bttn-start" onclick="restartGame()">Start New Game</button>
             </div>
         </div>
         <!-- GAME BOX Ends here -->
