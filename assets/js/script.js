@@ -66,7 +66,8 @@ function restartGame() {
     while (dealerCards.firstChild) {
         dealerCards.removeChild(dealerCards.firstChild);
         }
-    console.log(dealerCards);
+        console.log(dealerCards);
+
     let playerCards = document.getElementById("player-cards");
     while (playerCards.firstChild) {
         playerCards.removeChild(playerCards.firstChild);
@@ -77,12 +78,11 @@ function restartGame() {
     let card = cardsDeck.pop();
     document.getElementById("dealer-cards").append(cardImg);
     cardImg.src = "./assets/images/deck/back.png";
-
+    
     canHit = true;
     createDeck();
     shuffleDeck();
     startGame();
-
 }
 
 function startGame() {
