@@ -1,0 +1,59 @@
+
+/* ------------------------
+ INSTRUCTIONS BOX - left side screen hidden TBC
+------------------------*/
+#welcome-box {
+    display: flex;
+    float: left;
+    background-image: url(../images/welcome.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    color: var(--bg-dark-green);
+    max-width: 750px;
+    height: 100vh;
+    margin: 20px 20px 20px -15px;
+    padding: 20px 10px  20px 35px;
+
+    border: 1px solid #013200;
+    border-radius: 24px;
+    box-shadow: 2px 1px 5px var(--shadow-box)e;
+    
+
+    display: block;
+}
+
+#instructions-wraper {
+    width: 80%;
+    margin: 50px auto;
+
+}
+
+#player-name-empty{
+
+}
+
+#input-player-name{
+
+} 
+
+#bttn-save-player-name {
+
+}
+
+
+
+/* Name input + button */
+
+/* #box-empty #input-save-name {
+    color: black;
+    text-transform: capitalize;
+    width: 180px;
+    max-height: 100px;
+    padding: 10px 0;
+    margin: 5% 0;
+    background-color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px black;
+}  */

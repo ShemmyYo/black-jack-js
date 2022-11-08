@@ -42,17 +42,14 @@ h2 {
     margin: 0 auto;
 }
 
-/* ------------------------
- INSTRUCTIONS BOX - left side screen hidden TBC
-------------------------*/
-#instructions-box {
-}
+
 
 
  /* ------------------------
     MAIN GAME BOX 
  ------------------------*/
  #game-box {
+    clear: both;
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -120,25 +117,21 @@ h2 {
 }
 
 .button {
-    font-weight: bold;
+    background-image: linear-gradient(45deg, #013200 0%, #F09819  51%, #daa520 100%);
+    background-size: 200% auto;
     width: 200px;
-    padding: 10px;
-    margin: 10px;
-    padding: 15px 30px;
+    margin: 5px;
+    padding: 10px 30px;
+    color: whitesmoke;
+    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: whitesmoke;
     border-radius: 8px;
-    display: block;
     border: none;
-    font-weight: 700;
-    box-shadow: 0px 0px 14px -7px #f09819;
-    background-image: linear-gradient(45deg, #013200 0%, #F09819  51%, #daa520 100%);
+    box-shadow: 1px 1px 14px 1px #013200;
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none;
+    transition: 0.5s;
     touch-action: manipulation;
 }
 

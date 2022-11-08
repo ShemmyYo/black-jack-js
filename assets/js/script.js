@@ -143,15 +143,15 @@ function stay() {
     if (playerSum === 21) {
         message = "Congratulations!!! You've got a Blackjack!";
     } else if (playerSum > 21) {
-        message = "You Lose!";
+        message = "You Lose " + player.name + "!";
     } else if (dealerSum > 21) {
-        message = "You Win!";
+        message = "You Win " + player.name + "!";
     } else if (playerSum == dealerSum) {
         message = "Tie!";
     } else if (playerSum > dealerSum) {
-        message = "You Win Chicken!";
+        message = "You Win " + player.name + "!";
     } else if (playerSum < dealerSum){
-        message = "You Lose Chicken!";
+        message = "You Lose " + player.name + "";
     }
     messageEl.innerHTML = message;
 }
