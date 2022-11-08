@@ -2,6 +2,18 @@
 /* ------------------------
  INSTRUCTIONS BOX - left side screen hidden TBC
 ------------------------*/
+
+h1,
+h3 {
+    margin-top: 50px;
+    padding: 0 3%;
+}
+
+p,
+li {
+    padding: 0 3%;
+}
+
 #welcome-box {
     display: flex;
     float: left;
@@ -17,43 +29,39 @@
 
     border: 1px solid #013200;
     border-radius: 24px;
-    box-shadow: 2px 1px 5px var(--shadow-box)e;
+    box-shadow: 2px 1px 5px var(--shadow-box);
     
 
     display: block;
 }
 
-#instructions-wraper {
-    width: 80%;
-    margin: 50px auto;
+#welcome-box ol {
+    list-style-type: none;
+}
 
+#welcome-box li {
+    text-align:center justify;
+}
+
+#instructions-bg-wraper {
+    width: 90%;
+    margin: 50px auto;
+    background-color:  var(--off-white);
+    border: 1px solid #013200;
+    border-radius: 16px;
+    box-shadow: 2px 1px 5px var(--shadow-box);
+    opacity: 0.8;
+
+}
+
+#instructions-bg-wraper .button {
+    margin: 5%;
 }
 
 #player-name-empty{
 
 }
 
-#input-player-name{
-
-} 
-
 #bttn-save-player-name {
 
 }
-
-
-
-/* Name input + button */
-
-/* #box-empty #input-save-name {
-    color: black;
-    text-transform: capitalize;
-    width: 180px;
-    max-height: 100px;
-    padding: 10px 0;
-    margin: 5% 0;
-    background-color: var(--gold);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px black;
-}  */
