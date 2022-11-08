@@ -56,19 +56,39 @@ function shuffleDeck() {
 
 function restartGame() {
     cardsDeck = [];
+    console.log(cardsDeck);
     playerSum = 0;
+    console.log(playerSum);
     dealerSum = 0;
-    // document.getElementById("dealer-cards") 
+    console.log(dealerSum);
+
+    let dealerCards = document.getElementById("dealer-cards");
+    while (dealerCards.firstChild) {
+        dealerCards.removeChild(dealerCards.firstChild);
+        }
+    console.log(dealerCards);
+    let playerCards = document.getElementById("player-cards");
+    while (playerCards.firstChild) {
+        playerCards.removeChild(playerCards.firstChild);
+        } 
+        console.log(playerCards); 
+
+    let cardImg = document.createElement("img");
+    let card = cardsDeck.pop();
+    document.getElementById("dealer-cards").append(cardImg);
+    cardImg.src = "./assets/images/deck/back.png";
+
     canHit = true;
     createDeck();
     shuffleDeck();
     startGame();
+
 }
 
 function startGame() {
     hidden = cardsDeck.pop();
     dealerSum += getValue(hidden);
-    // console.log(hidden);
+    console.log("hidden: " + hidden);
     // console.log(dealerSum);
 
     while (dealerSum < 17 ) {
@@ -85,7 +105,7 @@ function startGame() {
         let card = cardsDeck.pop();
         cardImg.src = "./assets/images/deck/" + card + ".png";
         playerSum += getValue(card);
-        document.getElementById("your-cards").append(cardImg);
+        document.getElementById("player-cards").append(cardImg);
     }
     console.log("P: " + playerSum);
     document.getElementById("hit").addEventListener("click", hit);
@@ -100,7 +120,7 @@ function hit() {
     let card = cardsDeck.pop();
     cardImg.src = "./assets/images/deck/" + card + ".png";
     playerSum += getValue(card);
-    document.getElementById("your-cards").append(cardImg);
+    document.getElementById("player-cards").append(cardImg);
 
     if (playerSum <= 20) {
         message = "Do you want to draw another card?";
@@ -127,11 +147,11 @@ function stay() {
     } else if (dealerSum > 21) {
         message = "You Win!";
     } else if (playerSum == dealerSum) {
-        message = "Tie!"
+        message = "Tie!";
     } else if (playerSum > dealerSum) {
-        message = "You Win Chicken!"
+        message = "You Win Chicken!";
     } else if (playerSum < dealerSum){
-        message = "You Lose Chicken!"
+        message = "You Lose Chicken!";
     }
     messageEl.innerHTML = message;
 }
