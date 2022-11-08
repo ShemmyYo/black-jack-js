@@ -11,36 +11,63 @@
 </head>
 <body>
     <div id="welcome-box">
-        <div id="instructions-bg-wraper">
-            <div id="instructions-wraper">
-                <h1>Blackjack</h1>
-                <h3>Beat The Dealer</h3>
-                <p>The aim of blackjack is to finish the game with a higher total than that of the dealer, without exceeding 21. 
+        <div id="instructions-wraper">
+            <h1>Blackjack</h1>
+            <h3>Beat The Dealer</h3>
+            <p>The aim of blackjack is to finish the game with a higher total than that of the dealer, without exceeding 21.
                 Going over 21 is commonly known as ‘busting’ and means an automatic loss.</p>
-                <p></p>
-                <h3>How do you beat the dealer?</h3>
-                <ol>
-                    <li>By drawing a hand value that is higher than the dealer’s hand value</li>
-                    <li>By the dealer drawing a hand value that goes over 21.</li>
-                    <li>By drawing a hand value of 21 on your first two cards, when the dealer does not.</li>
-                </ol>
-                <h3>How do you lose to the dealer?</h3>
-                <ol>
-                    <li>Your hand value exceeds 21.</li>
-                    <li>The dealers hand has a greater value than yours at the end of the round</li>
-                </ol>
-                <h3>How Do You Find a Hand’s Total Value?</h3>
-                <ol>
-                    <li>Cards 2 through to 10 count at face value, i.e. a 2 counts as two, a 9 counts as nine.</li>
-                    <li>Jack, Queen and King count as 10.</li>
-                    <li>Ace counts as 11</li>
-                </ol>
-            </div>
-            <form id="player-name-empty">
-                <input type="text" id="input-player-name" class="button" placeholder="type your name here" autofocus required>
-                <button type="button" id="bttn-save-player-name" class="button" onclick="newPlayerGame()">Save Your Name</button>
-            </form>
+            <p></p>
+            <h3>How do you beat the dealer?</h3>
+            <ol>
+                <li>By drawing a hand value that is higher than the dealer’s hand value</li>
+                <li>By the dealer drawing a hand value that goes over 21.</li>
+                <li>By drawing a hand value of 21 on your first two cards, when the dealer does not.</li>
+            </ol>
+            <h3>How do you lose to the dealer?</h3>
+            <ol>
+                <li>Your hand value exceeds 21.</li>
+                <li>The dealers hand has a greater value than yours at the end of the round</li>
+            </ol>
+            <h3>How Do You Find a Hand’s Total Value?</h3>
+            <ol>
+                <li>Cards 2 through to 10 count at face value, i.e. a 2 counts as two, a 9 counts as nine.</li>
+                <li>Jack, Queen and King count as 10.</li>
+                <li>Ace counts as 11</li>
+            </ol>
         </div>
+        <form id="player-name-empty">
+            <input type="text" id="input-player-name" class="button" placeholder="type your name here" autofocus required>
+            <button type="button" id="bttn-save-player-name" class="button" onclick="newPlayerGame()">Save Your Name</button>
+        </form>
+        <footer id="footer-wrapper">
+            <div class="social-media-container">
+                <ul id="social-links">
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Facebook page(opens in a new tab)">
+                            <i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Twetter page(opens in a new tab)">
+                            <i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://youtube.com" target="_blank" rel="noopener"
+                            aria-label="Visit our YouTube page(opens in a new tab)">
+                            <i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Instagram page(opens in a new tab)">
+                            <i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/ShemmyYo/mr-and-mrs-cleaners" target="_blank" rel="noopener"
+                            aria-label="Visit my GitHub page(opens in a new tab)">
+                            <i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/przemek-shemmy-gotner/" target="_blank" rel="noopener"
+                            aria-label="Visit my LinkedIn page(opens in a new tab)">
+                            <i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="copyright-container">
+                <a href="https://github.com/ShemmyYo/mr-and-mrs-cleaners" target="_blank" rel="noopener"
+                    aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo, Project is made for
+                    Educational purposes</a>
+            </div>
+        </footer>
     </div>
     <div id="outer-box">
         <!-- GAME BOX Starts here -->
@@ -79,7 +106,11 @@
             </div>
         </div>
         <!-- GAME BOX Ends here -->
-        <div id="scores-box"></div>
+        <div id="scores-box">
+            <p id="sum-el"></p>
+            <p id="round-el"></p>
+            <p id="credit-el"></p>
+        </div>
     </div>
     
 

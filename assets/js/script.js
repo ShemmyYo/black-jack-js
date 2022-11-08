@@ -18,7 +18,12 @@ playerEl.innerHTML = player.name + " Credit: " + player.credit;
 
 
 let dealerSum = 0;
+let dealerSumEl = document.getElementById("dealer-sum");
+dealerSumEl.innerHTML = dealerSum;
+
 let playerSum = 0;
+let playerSumEl = document.getElementById("player-sum");
+playerSumEl.innerHTML = playerSum;
 
 let cardsDeck;
 let hidden;
@@ -26,6 +31,8 @@ let hidden;
 var canHit = true;
 
 window.onload = function() {
+    messageEl.innerHTML = message = "Welcome to Blackjack!<br>" + player.name;
+
     createDeck();
     shuffleDeck();
     startGame();
@@ -79,6 +86,9 @@ function restartGame() {
     document.getElementById("dealer-cards").append(cardImg);
     cardImg.src = "./assets/images/deck/back.png";
     
+    dealerSumEl.innerHTML = "???";
+    playerSumEl.innerHTML = playerSum;
+
     canHit = true;
     createDeck();
     shuffleDeck();
@@ -110,6 +120,8 @@ function startGame() {
     console.log("P: " + playerSum);
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stay").addEventListener("click", stay);
+
+    playerSumEl.innerHTML = playerSum;
 }
 
 function hit() {
@@ -134,6 +146,8 @@ function hit() {
         stay();
     }
     messageEl.innerHTML = message;
+
+    playerSumEl.innerHTML = playerSum;
 }
 
 function stay() {
@@ -154,6 +168,9 @@ function stay() {
         message = "You Lose " + player.name + "";
     }
     messageEl.innerHTML = message;
+
+    dealerSumEl.innerHTML = dealerSum;
+    playerSumEl.innerHTML = playerSum;
 }
 
 function getValue(card) {
@@ -195,44 +212,5 @@ function getValue(card) {
 //     }
 // }
 
-// function game() {
 
-//     cardsEl.innerHTML = "Cards: ";
 
-//     for (let i = 0; i < cards.length; i++) {
-//     cardsEl.innerHTML += cards[i] + " ";
-
-//     if (sum <= 20) {
-//         message = "Do you want to draw another card?";
-//     } else if (sum === 21) {
-//         message = "Congratulations!!! You've got a Blackjack!";
-//         hasBlackJack = true;        
-//     } else {
-//         message = "You loose!";
-//         isActive = false;
-//     }    
-//     messageEl.innerHTML = message;
-//     }
-// }
-
-// function newCard() {
-//     if (isActive === true && hasBlackJack === false) { 
-//         let card = getRandomCard();
-//         sum += card;
-//         cards.push(card);
-//         game();
-//     }
-// }
-
-// function getRandomCard() {    
-//     let cardValue = Math.floor( Math.random()*13 ) + 1;
-    
-//     if (cardValue === 1) {
-//         cardValue = 11;
-//     } else if (cardValue > 10 ) {
-//         cardValue = 10;
-//     } else {
-//         return cardValue;
-//     }
-//     return cardValue;
-// }
