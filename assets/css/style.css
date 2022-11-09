@@ -1,8 +1,8 @@
 :root {
     --off-white: rgb(245, 245, 245);
     --gold: rgb(218, 164, 32);
-    --bg-dark-green:  #011b00;
-    --shadow-box:  rgb(1, 50, 0);
+    --bg-dark-green: #011b00;
+    --shadow-box: rgb(1, 50, 0);
 }
 
 body {
@@ -27,8 +27,7 @@ h2 {
 h1,
 h2,
 h3 {
-    margin-top: 50px;
-    padding: 0 3%;
+    padding: 50px 3%;
 }
 
 #outer-box {
@@ -46,21 +45,28 @@ h3 {
  INSTRUCTIONS - Landing page
 ------------------------*/
 #welcome-box,
-scores-box {
+#scores-box {
     padding: 1% 3%;
 }
 
 #instructions-wraper,
-scores-wraper {
+#scores-wraper {
     min-height: 800px;
     padding: 2% -3% -3% 2%;
-    background-image: url(../images/welcome.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--bg-dark-green);
     border: 1px solid #013200;
     border-radius: 24px;
     box-shadow: 2px 1px 5px var(--shadow-box);
+}
+
+#instructions-wraper {
+    background-image: url(../images/welcome.jpg);
+}
+
+#scores-wraper {
+    background-image: url(../images/scores.jpg);
 }
 
 #instructions-wraper p {
@@ -72,21 +78,22 @@ scores-wraper {
 }
 
 #instructions-wraper li {
-    text-align:center justify;
+    text-align: center justify;
 }
 
-#instructions-bg-wraper {  
-    min-height: 800px; 
+#instructions-bg-wraper,
+#scores-bg-wraper {
+    min-height: 800px;
     width: 100%;
     margin: 2% -3% -3% 2%;
-    background-color:  var(--off-white);
+    background-color: var(--off-white);
     border: 1px solid #013200;
     border-radius: 16px;
     box-shadow: 2px 1px 5px var(--shadow-box);
     opacity: 0.7;
 }
 
-#instructions-bg-wraper span{
+#instructions-bg-wraper span {
     margin: 1%;
     max-width: 30%;
     padding-bottom: 3%;
@@ -101,9 +108,8 @@ scores-wraper {
     justify-content: space-evenly;
     height: 100%;
     width: 100%;
-    padding-bottom: 2% ;
+    padding-bottom: 2%;
 }
-
 
 #instructions-bg-wraper .button {
     margin: 1% 5%;
@@ -118,25 +124,33 @@ player-old-name-empty,
     display: none;
 }
 
-#player-name-empty{
-}
+#player-name-empty {}
 
-#bttn-save-player-name {
-}
+#bttn-save-player-name {}
 
- /* ------------------------
+/* ------------------------
     MAIN GAME BOX 
  ------------------------*/
- #game-box {
-    clear: both;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
+#game-wrap {
+    background-image: url("/assets/images/blackjack-bg.jpg" );
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: 1px solid var(--bg-dark-green);
+    border-radius: 24px;
+    box-shadow: 2px 1px 5px var(--shadow-box);
+    margin: 2%;
+    min-height: 900px;
+
+}
+#game-box {
+
 }
 
-#game-box-cards{
+#game-box-cards {
     height: 80%;
-    margin: 0 auto;;
+    margin: 0 auto;
+    ;
 }
 
 #dealer-cards img,
@@ -151,7 +165,8 @@ player-old-name-empty,
 
 #inner-game-box-cards-dealer {
     height: 30%;
-    margin: 0 auto;;
+    margin: 0 auto;
+    ;
 }
 
 #inner-game-box-msg {
@@ -196,7 +211,7 @@ player-old-name-empty,
 }
 
 .button {
-    background-image: linear-gradient(45deg, #013200 0%, #F09819  51%, #daa520 100%);
+    background-image: linear-gradient(45deg, #013200 0%, #F09819 51%, #daa520 100%);
     background-size: 200% auto;
     width: 200px;
     margin: 5px;
@@ -215,18 +230,18 @@ player-old-name-empty,
 }
 
 .button:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: var(--shadow-box);
-  text-decoration: none;
+    background-position: right center;
+    /* change the direction of the change here */
+    color: var(--shadow-box);
+    text-decoration: none;
 }
 
 .button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 #social-media-container {
-    position:fixed;
+    position: fixed;
     bottom: 50px;
     left: 0;
     width: 100%;
@@ -250,8 +265,8 @@ player-old-name-empty,
     color: var(--gold);
 }
 
-#copyright-container{
-    position:fixed;
+#copyright-container {
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -268,13 +283,13 @@ player-old-name-empty,
 }
 
 .spare-code {
-/* cards */
+    /* cards */
 
-/* #back-wrapper {
+    /* #back-wrapper {
     position: relative;
 } */
 
-/* #back-wrapper #card-back {
+    /* #back-wrapper #card-back {
     position: absolute;
     top: -50px;
     right: 50px;
@@ -291,7 +306,7 @@ player-old-name-empty,
     overflow: hidden;
 } */
 
-/* #deck-wrapper {
+    /* #deck-wrapper {
     position: fixed;
     bottom: 150px;
     left: 0;
@@ -312,7 +327,7 @@ player-old-name-empty,
 } */
 
 
-/* Buttons */
+    /* Buttons */
 
 }
 
@@ -321,8 +336,7 @@ player-old-name-empty,
 /* ------------------------ 
 right side screen hidden 
 ------------------------*/
-#scores-box {
-}
+#scores-box {}
 
 /* ------------------- 
         MEDIA
@@ -332,7 +346,7 @@ right side screen hidden
 
     body {
         font-size: 70%;
-        
+
 
         /* background-image: url("../images/blackjack-bg-v.jpg");
         background-size: cover;
@@ -341,22 +355,22 @@ right side screen hidden
         
         text-align: center; */
     }
-  
-    #instructions-bg-wraper span{
+
+    #instructions-bg-wraper span {
         min-width: 90%;
         padding: 1%;
         margin: 1%;
     }
 
     #social-media-container {
-        position:fixed;
+        position: fixed;
         bottom: 20px;
         left: 0;
         width: 100%;
         height: 30px;
         text-align: center;
     }
-    
+
     #social-links {
         width: 100%;
         padding: 0;
@@ -369,14 +383,14 @@ right side screen hidden
         font-size: 200%;
         align-items: center;
     }
-    
+
     #social-links i {
         color: var(--bg-dark-green);
         padding: 20px;
         padding: 0;
         margin: 0;
     }
- 
+
     #copyright-container {
         height: 15px;
     }
@@ -420,8 +434,8 @@ right side screen hidden
     } */
 }
 
-    @media screen and (min-width: 460px) and (max-width: 680px) {  
-         
+@media screen and (min-width: 460px) and (max-width: 680px) {
+
     /* #back-wrapper #card-back {
         position: absolute;
         top: -30px;
@@ -446,7 +460,7 @@ right side screen hidden
         align-items: center;
         width: 180px;
     } */
-  
+
     /* #footer-wrapper {
         position:fixed;
         width: 100%;
@@ -465,9 +479,7 @@ right side screen hidden
 
 }
 
-@media screen and (max-width: 680px) { 
-
-}
+@media screen and (max-width: 680px) {}
 
 @media screen and (min-width: 900px) {
 
