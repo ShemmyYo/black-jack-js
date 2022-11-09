@@ -1,4 +1,7 @@
 // document.getElementById("bttn-card").style.visibility = "hidden";
+document.getElementById("change-player").style.visibility = "hidden";
+document.getElementById("enter-game").style.visibility = "hidden";
+
 
 let player = {
     name: "Shemmy",
@@ -33,32 +36,68 @@ let hidden;
 
 var canHit = true;
 
+let welcomeInputPlayerEl = document.getElementById("input-player-name");
+let welcomePlayerMsgEl = document.getElementById("enter-game-msg");
+
+
 window.onload = function() {
-
-    isKnown();
+    console.log("window onload");
+    validatePlayer();
     
-};
-
-
-function isKnown() {
-    let inputPlayer = document.getElementById("input-player-name");
-
-    if (inputPlayer.value === localStorage.getItem("bj-playerName")) {
-        console.log("correct");
-
-        createDeck();
-        shuffleDeck();
-        startGame();
-        message = "Welcome back!<br>" + localStorage.getItem("bj-playerName");
-    } else {
-        localStorage.setItem("bj-playerName", inputPlayer.value);
-        console.log("not correct");
-
-        message = "Welcome to Blackjack!<br>" + localStorage.getItem("bj-playerName");
-    }
-    messageEl.innerHTML = message;
 }
 
+function clearUser() {
+    console.log("clear user");
+    localStorage.clear("bj-playerName");
+    welcomePlayerMsgEl.innerHTML = "Enter New Player";
+
+    document.getElementById("change-player").style.visibility = "hidden";
+    document.getElementById("enter-game").style.visibility = "hidden";
+    document.getElementById("input-player-name").style.visibility = "visible";
+    document.getElementById("bttn-save-player-name").style.visibility = "visible";
+}
+
+function addUser() {
+    console.log("add user");
+    if (!welcomeInputPlayerEl.value) {
+    } else {
+        localStorage.setItem("bj-playerName", welcomeInputPlayerEl.value);
+        welcomePlayerMsgEl.innerHTML = "Welcome! " + welcomeInputPlayerEl.value;
+
+        document.getElementById("change-player").style.visibility = "visible";
+        document.getElementById("enter-game").style.visibility = "visible";
+        document.getElementById("input-player-name").style.visibility = "hidden";
+        document.getElementById("bttn-save-player-name").style.visibility = "hidden";
+    }
+}
+
+function validatePlayer() {
+
+    if (localStorage.getItem("bj-playerName")) {
+        console.log("user exists");
+
+        message =  "Welcome back! " + localStorage.getItem("bj-playerName");
+        welcomePlayerMsgEl.innerHTML = "Welcome back! " + localStorage.getItem("bj-playerName");
+
+        document.getElementById("change-player").style.visibility = "visible";
+        document.getElementById("enter-game").style.visibility = "visible";
+        document.getElementById("input-player-name").style.visibility = "hidden";
+        document.getElementById("bttn-save-player-name").style.visibility = "hidden";
+
+    } else {
+        addUser()
+    }
+
+    messageEl.innerHTML = message;
+    inputPlayerMsg.innerHTML = enterPlayerMsg;
+}
+
+
+function restartGame() {
+    createDeck();
+    shuffleDeck();
+    // startGame();
+}
 
 function createDeck() {
     let colors = ["H", "C", "D", "S"];

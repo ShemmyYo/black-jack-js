@@ -37,8 +37,11 @@
         </div>
         <form id="player-name-empty">
             <input type="text" id="input-player-name" class="button" placeholder="type your name here" autofocus required>
-            <button type="button" id="bttn-save-player-name" class="button" onclick="isKnown()">Save Your Name</button>
+            <button type="button" id="bttn-save-player-name" class="button" onclick="addUser()">Save Your Name</button>
         </form>
+        <span><h2 id="enter-game-msg"></h2></span>
+        <button type="button" id="change-player" class="button" onclick="clearUser()">Change User</button>
+        <button type="button" id="enter-game" class="button" onclick="validatePlayer()">Enter Blackjack!</button>        
         <footer id="footer-wrapper">
             <div class="social-media-container">
                 <ul id="social-links">
