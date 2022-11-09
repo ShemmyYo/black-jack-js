@@ -14,7 +14,20 @@
         <div id="welcome-box">
             <div id="instructions-wraper">
                 <div id="instructions-bg-wraper">
-                    <h1>Blackjack</h1>
+                    <div id="login-menu">
+                        <h1>Blackjack</h1>
+                        <form id="player-new-name-empty">
+                            <input type="text" id="input-player-name" class="button" placeholder="type your name here" autofocus
+                                required>
+                            <button type="button" id="bttn-save-player-name" class="button" onclick="addUser()">Save Your
+                                Name</button>
+                        </form>
+                        <section id="player-old-name-empty>
+                            <span><h2 id="enter-game-msg"></h2></span>
+                            <button type="button" id="change-player" class="button" onclick="clearUser()">Change User</button>
+                            <button type="button" id="enter-game" class="button" onclick="startGame()">Enter Blackjack!</button>
+                        </section>  
+                    </div>
                     <h3>Beat The Dealer</h3>
                     <p>The aim of blackjack is to finish the game with a higher total than that of the dealer, without
                         exceeding
@@ -41,22 +54,8 @@
                             <p>Ace counts as 11</p>
                         </span>
                     </div>
-                    <form id="player-name-empty">
-                        <input type="text" id="input-player-name" class="button" placeholder="type your name here"
-                            autofocus required>
-                        <button type="button" id="bttn-save-player-name" class="button" onclick="addUser()">Save Your
-                            Name</button>
-                    </form>
-                    <span>
-                        <h2 id="enter-game-msg"></h2>
-                    </span>
-                    <button type="button" id="change-player" class="button" onclick="clearUser()">Change User</button>
-                    <button type="button" id="enter-game" class="button" onclick="startGame()">Enter
-                        Blackjack!</button>
                 </div>
-            </div>
-            <footer id="footer-wrapper">
-                <div class="social-media-container">
+                <div id="social-media-container">
                     <ul id="social-links">
                         <li><a href="https://facebook.com" target="_blank" rel="noopener"
                                 aria-label="Visit our Facebook page(opens in a new tab)">
@@ -78,12 +77,12 @@
                                 <i class="fa-brands fa-linkedin"></i></a></li>
                     </ul>
                 </div>
-                <div class="copyright-container">
-                    <a href="https://github.com/ShemmyYo/mr-and-mrs-cleaners" target="_blank" rel="noopener"
-                        aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo,
-                        Project
-                        is made for
-                        Educational purposes</a>
+            </div>
+            <footer id="footer-wrapper">
+                <div id="copyright-container">
+                    <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
+                        aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo -
+                        Project developed for Educational purposes</a>
                 </div>
             </footer>
         </div>

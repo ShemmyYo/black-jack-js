@@ -1,6 +1,6 @@
-// document.getElementById("bttn-card").style.visibility = "hidden";
-document.getElementById("change-player").style.visibility = "hidden";
-document.getElementById("enter-game").style.visibility = "hidden";
+document.getElementById("bttn-card").style.display = "none";
+document.getElementById("change-player").style.display = "none";
+document.getElementById("enter-game").style.display = "none";
 
 
 let player = {
@@ -10,7 +10,8 @@ let player = {
 
 let round = 1;
 let credit = 3;
-
+let welcomeInputPlayerEl = document.getElementById("input-player-name");
+let welcomePlayerMsgEl = document.getElementById("enter-game-msg");
 let cards = [];
 let sum = 0;
 let hasBlackJack = false;
@@ -36,8 +37,7 @@ let hidden;
 
 var canHit = true;
 
-let welcomeInputPlayerEl = document.getElementById("input-player-name");
-let welcomePlayerMsgEl = document.getElementById("enter-game-msg");
+
 
 
 window.onload = function() {
@@ -51,10 +51,10 @@ function clearUser() {
     localStorage.clear("bj-playerName");
     welcomePlayerMsgEl.innerHTML = "Enter New Player";
 
-    document.getElementById("change-player").style.visibility = "hidden";
-    document.getElementById("enter-game").style.visibility = "hidden";
-    document.getElementById("input-player-name").style.visibility = "visible";
-    document.getElementById("bttn-save-player-name").style.visibility = "visible";
+    document.getElementById("change-player").style.display = "none";
+    document.getElementById("enter-game").style.display = "none";
+    document.getElementById("input-player-name").style.display = "compact";
+    document.getElementById("bttn-save-player-name").style.display = "compact";
 }
 
 function addUser() {
@@ -65,10 +65,10 @@ function addUser() {
         localStorage.setItem("bj-playerName", welcomeInputPlayerEl.value);
         welcomePlayerMsgEl.innerHTML = "Welcome! " + welcomeInputPlayerEl.value;
 
-        document.getElementById("change-player").style.visibility = "visible";
-        document.getElementById("enter-game").style.visibility = "visible";
-        document.getElementById("input-player-name").style.visibility = "hidden";
-        document.getElementById("bttn-save-player-name").style.visibility = "hidden";
+        document.getElementById("change-player").style.display = "compact";
+        document.getElementById("enter-game").style.display = "compact";
+        document.getElementById("input-player-name").style.display = "none";
+        document.getElementById("bttn-save-player-name").style.display = "none";
     }
 }
 
@@ -80,10 +80,10 @@ function validatePlayer() {
         message =  "Welcome back! " + localStorage.getItem("bj-playerName");
         welcomePlayerMsgEl.innerHTML = "Welcome back! " + localStorage.getItem("bj-playerName");
 
-        document.getElementById("change-player").style.visibility = "visible";
-        document.getElementById("enter-game").style.visibility = "visible";
-        document.getElementById("input-player-name").style.visibility = "hidden";
-        document.getElementById("bttn-save-player-name").style.visibility = "hidden";
+        document.getElementById("change-player").style.display = "compact";
+        document.getElementById("enter-game").style.display = "compact";
+        document.getElementById("input-player-name").style.display = "none";
+        document.getElementById("bttn-save-player-name").style.display = "none";
 
     } else {
         addUser();
@@ -291,9 +291,9 @@ function getValue(card) {
 
 //         game();
 
-//         // document.getElementById("bttn-start").style.visibility = "hidden";
-//         // document.getElementById("bttn-card").style.visibility = "visible";
-//         // document.getElementById("bttn-save").style.visibility = "visible";
+//         // document.getElementById("bttn-start").style.display = "hidden";
+//         // document.getElementById("bttn-card").style.display = "visible";
+//         // document.getElementById("bttn-save").style.display = "visible";
 //     }
 // }
 
