@@ -44,7 +44,7 @@ window.onload = function() {
     console.log("window onload");
     validatePlayer();
     
-}
+};
 
 function clearUser() {
     console.log("clear user");
@@ -58,6 +58,7 @@ function clearUser() {
 }
 
 function addUser() {
+
     console.log("add user");
     if (!welcomeInputPlayerEl.value) {
     } else {
@@ -85,11 +86,11 @@ function validatePlayer() {
         document.getElementById("bttn-save-player-name").style.visibility = "hidden";
 
     } else {
-        addUser()
+        addUser();
     }
 
     messageEl.innerHTML = message;
-    inputPlayerMsg.innerHTML = enterPlayerMsg;
+    welcomePlayerMsgEl.innerHTML = enterPlayerMsg;
 }
 
 
@@ -122,9 +123,9 @@ function shuffleDeck() {
     console.log(cardsDeck);
     }
 
-function restartGame() {
-    location.reload(true);  
-}
+// function restartGame() {
+//     location.reload(true);  
+// }
 
 function restartGame_() {
     console.log("restart function start");
@@ -298,3 +299,28 @@ function getValue(card) {
 
 
 
+
+
+
+function slideWelcomeWindowLeft() {
+
+    let id = null;
+    const welcomeWindow = document.getElementById("instructions-wraper") 
+    let pos = 0;
+    let opa = 1;
+    clearInterval(id);
+    id = setInterval(frame, 0);
+    function frame() {
+        if (pos == -1000) {
+            clearInterval(id);
+        } else {
+            pos++; 
+            opa = opa - 0.009;
+            // welcomeWindow.style.top = pos + "px"; 
+            welcomeWindow.style.right = pos + "px"; 
+            welcomeWindow.style.opacity = opa;
+        }
+    }
+
+
+}
