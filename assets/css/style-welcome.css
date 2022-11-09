@@ -17,7 +17,7 @@ li {
 #welcome-box {
     position:fixed;
     top:0;
-    left:-740px;
+    left:-7px;
     z-index:2;
   
     max-width: 750px;

@@ -5,6 +5,9 @@ let player = {
     credit: 3
 };
 
+let round = 1;
+let credit = 3;
+
 let cards = [];
 let sum = 0;
 let hasBlackJack = false;
@@ -31,12 +34,31 @@ let hidden;
 var canHit = true;
 
 window.onload = function() {
-    messageEl.innerHTML = message = "Welcome to Blackjack!<br>" + player.name;
 
-    createDeck();
-    shuffleDeck();
-    startGame();
+    isKnown();
+    
 };
+
+
+function isKnown() {
+    let inputPlayer = document.getElementById("input-player-name");
+
+    if (inputPlayer.value === localStorage.getItem("bj-playerName")) {
+        console.log("correct");
+
+        createDeck();
+        shuffleDeck();
+        startGame();
+        message = "Welcome back!<br>" + localStorage.getItem("bj-playerName");
+    } else {
+        localStorage.setItem("bj-playerName", inputPlayer.value);
+        console.log("not correct");
+
+        message = "Welcome to Blackjack!<br>" + localStorage.getItem("bj-playerName");
+    }
+    messageEl.innerHTML = message;
+}
+
 
 function createDeck() {
     let colors = ["H", "C", "D", "S"];
@@ -62,6 +84,11 @@ function shuffleDeck() {
     }
 
 function restartGame() {
+    location.reload(true);  
+}
+
+function restartGame_() {
+    console.log("restart function start");
     cardsDeck = [];
     console.log(cardsDeck);
     playerSum = 0;
@@ -85,17 +112,21 @@ function restartGame() {
     let card = cardsDeck.pop();
     document.getElementById("dealer-cards").append(cardImg);
     cardImg.src = "./assets/images/deck/back.png";
-    
-    dealerSumEl.innerHTML = "???";
-    playerSumEl.innerHTML = playerSum;
 
+    dealerSumEl.innerHTML = "";
+    playerSumEl.innerHTML = playerSum;
+    messageEl.innerHTML = "";
+    playerEl.innerHTML = "Credit: " + credit; 
+    
     canHit = true;
     createDeck();
     shuffleDeck();
     startGame();
+    console.log("restart function stop");
 }
 
 function startGame() {
+    canHit = true;
     hidden = cardsDeck.pop();
     dealerSum += getValue(hidden);
     console.log("hidden: " + hidden);
@@ -152,25 +183,40 @@ function hit() {
 
 function stay() {
     canHit = false;
-    document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
 
     if (playerSum === 21) {
-        message = "Congratulations!!! You've got a Blackjack!";
+        credit += 5;
+        message = "Congratulations!!! You've got a Blackjack!<br>Your Credit has gone up by 5 and is now: " + credit;
+        
     } else if (playerSum > 21) {
-        message = "You Lose " + player.name + "!";
+        credit -= 1;
+        message = "You Lose " + player.name + "!<br>Your Credit has gone down by 1 and is now: " + credit;
+        
     } else if (dealerSum > 21) {
-        message = "You Win " + player.name + "!";
+        credit +=3 ;
+        message = "You Win " + player.name + "!<br>Your Credit has gone up by 3 and is now:" + credit;
+
     } else if (playerSum == dealerSum) {
-        message = "Tie!";
+        message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
+        
     } else if (playerSum > dealerSum) {
-        message = "You Win " + player.name + "!";
+        credit += 1;
+        message = "You Win " + player.name + "!<br>Your Credit has not changeda and is now:" + credit;
+        
     } else if (playerSum < dealerSum){
         message = "You Lose " + player.name + "";
     }
     messageEl.innerHTML = message;
+    playerEl.innerHTML = "Credit: " + credit; 
 
     dealerSumEl.innerHTML = dealerSum;
     playerSumEl.innerHTML = playerSum;
+
+    console.log("before: " + cardsDeck);
+    console.log(hidden);
+    document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
+    console.log("after: " + cardsDeck);
+
 }
 
 function getValue(card) {
@@ -185,7 +231,6 @@ function getValue(card) {
     }
     return parseInt(value);
 }
-
 
 
 
