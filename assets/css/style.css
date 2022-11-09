@@ -37,7 +37,7 @@ h3 {
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    min-height: 900px;
+    min-height: 950px;
     margin: 0;
     padding: 0;
 }
@@ -45,12 +45,14 @@ h3 {
 /* ------------------------
  INSTRUCTIONS - Landing page
 ------------------------*/
-#welcome-box {
-    padding: 3%;
+#welcome-box,
+scores-box {
+    padding: 1% 3%;
 }
 
-#instructions-wraper {
-    min-height: 700px;
+#instructions-wraper,
+scores-wraper {
+    min-height: 800px;
     padding: 2% -3% -3% 2%;
     background-image: url(../images/welcome.jpg);
     background-size: cover;
@@ -74,7 +76,8 @@ h3 {
 }
 
 #instructions-bg-wraper {  
-    min-height: 720px; 
+    min-height: 800px; 
+    width: 100%;
     margin: 2% -3% -3% 2%;
     background-color:  var(--off-white);
     border: 1px solid #013200;
@@ -95,9 +98,12 @@ h3 {
 #span-wrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     height: 100%;
+    width: 100%;
     padding-bottom: 2% ;
 }
+
 
 #instructions-bg-wraper .button {
     margin: 1% 5%;
@@ -325,14 +331,61 @@ right side screen hidden
 @media screen and (max-width: 460px) {
 
     body {
-        background-image: url("../images/blackjack-bg-v.jpg");
+        font-size: 70%;
+        
+
+        /* background-image: url("../images/blackjack-bg-v.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        min-height: 740px;
-        text-align: center;
+        
+        text-align: center; */
     }
   
+    #instructions-bg-wraper span{
+        min-width: 90%;
+        padding: 1%;
+        margin: 1%;
+    }
+
+    #social-media-container {
+        position:fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+    }
+    
+    #social-links {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #social-links li {
+        display: inline;
+        padding: 25px;
+        font-size: 200%;
+        align-items: center;
+    }
+    
+    #social-links i {
+        color: var(--bg-dark-green);
+        padding: 20px;
+        padding: 0;
+        margin: 0;
+    }
+ 
+    #copyright-container {
+        height: 15px;
+    }
+
+    #copyright-container a {
+        padding: autox;
+        font-size: xx-small;
+    }
+
     /* #back-wrapper #card-back {
         position: absolute;
         top: -20px;
