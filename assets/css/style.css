@@ -175,7 +175,6 @@ span:hover{
     box-shadow: 2px 1px 5px var(--shadow-box);
     margin: 2%;
     min-height: 850px;
-
 }
 
 
@@ -186,24 +185,14 @@ span:hover{
 #game-box-cards {
     height: 80%;
     margin: 0 auto;
-    ;
 }
 
-#inner-game-box-cards-dealer {
-    height: 30%;
-    margin: 0 auto;
-    ;
-}
-
-#blackjack {
-    display: none;
-    /* display: float; */
-}
-
-
-#inner-game-box-msg {
-    height: 30%;
-    margin: 0 auto;
+#inner-game-box-cards-dealer,
+#inner-game-box-cards-player {
+    
+    min-height: 221px; 
+    margin: 0;
+    padding: 0;
 }
 
 #dealer-cards img,
@@ -216,11 +205,41 @@ span:hover{
     padding: 0;
 }
 
+#dealer-name-h2{
+    margin-right: 40%;
+}
 
-#player-el p {
-    /* height: 200px; */
-    /* font-size: larger; */
-    /* margin: auto; */
+#player-name-h2{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-right: 40%;
+}
+
+/* ---------------- 
+    GAME Messages
+ ---------------- */
+#inner-game-box-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 150px;
+    margin: 10px 20%;
+    font-size: 120%;
+    
+    /* background-color: var(--off-white);
+    opacity: 0.7;
+    color: var(--gold);
+    border: 1px solid var(--bg-dark-green);
+    border-radius: 24px;
+    box-shadow: 1px 1px 14px 1px #013200; */
+
+}
+
+#blackjack-el {
+    display: none;
 }
 
 #message-el p {
@@ -229,11 +248,9 @@ span:hover{
     /* margin: auto; */
 }
 
-#inner-game-box-cards-player {
-    height: 30%;
-    margin: 0 auto;
-}
-
+/* ---------------- 
+    GAME Buttons 
+---------------- */
 #bttn-wrapper {
     width: 100%;
     padding: 20px 10px;
@@ -250,12 +267,15 @@ span:hover{
 
 #bttn-reset{
     display: none;
+    min-width: 404px;
+    /* margin-left: calc(50% - 202px); */
 }
 
 #bttn-start {
     display: block;
     min-width: 404px;
-    margin-left: calc(50% - 202px);
+    /* margin-left: calc(50% - 202px); */
+    margin: auto;
 }
 
 .button {
@@ -285,50 +305,6 @@ span:hover{
 
 .button:active {
     transform: scale(0.95);
-}
-
-#social-media-container {
-    position: fixed;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    text-align: center;
-}
-
-#social-links li {
-    display: inline;
-    padding: 20px;
-    font-size: 170%;
-    align-items: center;
-}
-
-#social-links i {
-    color: var(--bg-dark-green);
-    padding: 20px;
-}
-
-#social-links i:hover {
-    color: var(--gold);
-    transform: scale(1.4);
-    transition: all 1000ms;
-}
-
-#copyright-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25px;
-    padding: auto;
-    background-color: var(--bg-dark-green);
-}
-
-#copyright-container a {
-    padding: 5px;
-    color: var(--gold);
-    font-size: small;
-    text-decoration: none;
 }
 
 .spare-code {
@@ -379,6 +355,63 @@ span:hover{
     /* Buttons */
 
 }
+
+
+
+
+
+
+
+/* --------------------------------
+        Social MEdia Container  
+-------------------------------- */
+#social-media-container {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+#social-links li {
+    display: inline;
+    padding: 20px;
+    font-size: 170%;
+    align-items: center;
+}
+
+#social-links i {
+    color: var(--bg-dark-green);
+    padding: 20px;
+}
+
+#social-links i:hover {
+    color: var(--gold);
+    transform: scale(1.4);
+    transition: all 1000ms;
+}
+
+#copyright-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    padding: auto;
+    background-color: var(--bg-dark-green);
+}
+
+#copyright-container a {
+    padding: 5px;
+    color: var(--gold);
+    font-size: small;
+    text-decoration: none;
+}
+
+
+
+
 
 
 

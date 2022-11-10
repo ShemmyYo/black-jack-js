@@ -12,23 +12,26 @@
 // let loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
 
 // GAME Page DOM Elements
-let blackjack = document.getElementById("blackjack");
 let dealerSumEl = document.getElementById("dealer-sum");
+let dealerNameEl = document.getElementById("dealer-name-h2");
 let playerSumEl = document.getElementById("player-sum");
 let playerNameEl = document.getElementById("player-name-h2");
+// let cardsEl = document.getElementById("cards-el");
+// let playerEl = document.getElementById("player-el");
+
+// GAME messages Elements
+let messageBox = document.getElementById("inner-game-box-msg");
+let blackjackEl = document.getElementById("blackjack-el");
 let messageEl = document.getElementById("message-el");
-let cardsEl = document.getElementById("cards-el");
-let playerEl = document.getElementById("player-el");
+
 //GAME buttons Elements
 let bttnStay = document.getElementById("bttn-stay");
 let bttnHit = document.getElementById("bttn-hit");
 let bttnStart = document.getElementById("bttn-start");
+let bttnReset = document.getElementById("bttn-reset");
+
 
 // Variables
-
-let round = 1;
-let credit = 3;
-
 let cards;
 let cardsDeck;
 let hidden;
@@ -40,66 +43,29 @@ let canHit = true;
 let canStay = true;
 let canReset = false;
 let hasBlackJack = false;
+let howManyBlackJaks = 0;
+let round = 1;
+let credit = 3;
 
 let message = "";
 
-// playerEl.innerHTML = player.name + " Credit: " + player.credit;
+// playerEl.innerHTML = localStorage.getItem("bj-playerName") + " Credit: " + player.credit;
 // dealerSumEl.innerHTML = dealerSum;
 // playerSumEl.innerHTML = playerSum;
 
 // Event Listeners
 
-
-
-
-
 window.onload = function() {
     console.log("game window onload");
+    playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":" ;
+    messageEl.innerHTML = "Do you want to play a round? <br><br>>>> START NEW GAME <<<"
 
 };
 
-function validatePlayer() {
-    if (localStorage.getItem("bj-playerName")) {
-        console.log("user exists");
-
-        // loginMsgBoxEl.style.display = "block";
-        // loginMsgBoxEl.innerHTML = "Welcome back! " + localStorage.getItem("bj-playerName");
-        messageEl.style.display = "inline";
-        message =  "Welcome back! " + localStorage.getItem("bj-playerName");
-
-        loginNewPlayerBoxEl.style.display = "none";
-        loginOldPlayerBoxEl.style.display = "inline";
-  
-
-    } else {
-        addPlayer();
-   }
-}
-
-loginBttnChangePlayerEl.addEventListener("click", function remPlayer(){
-    console.log("clear user");
-    localStorage.clear("bj-playerName");
-
-    loginNewPlayerBoxEl.style.display = "inline";
-    loginOldPlayerBoxEl.style.display = "none";
-});
-
-loginBttnSaveNewPlayerEl.addEventListener("click", function addPlayer(){
-    console.log("add user");
-    if (!loginInputPlayerEl.value) {
-        alert("Enter and save Your name Player! ");
-    } else {
-        localStorage.setItem("bj-playerName", loginInputPlayerEl.value);
-        loginMsgBoxEl.innerHTML = "Welcome! " + localStorage.getItem("bj-playerName");
-
-        loginNewPlayerBoxEl.style.display = "none";
-        loginOldPlayerBoxEl.style.display = "inline";
-    }
-});
-
 bttnStart.addEventListener("click", function startFirstGame() {
     console.log("fisrt start");
-    playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":" ;
+    messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br>>>> Hit! <<<<br>>>> STAY <<<<br><br>Are you feeling lucky???";
+    
     createDeck();
     shuffleDeck();
     firstGame();
@@ -133,6 +99,7 @@ function firstGame() {
     bttnStart.style.display = "none";
     bttnHit.style.display = "inline";
     bttnStay.style.display = "inline";
+    bttnReset.style.display = "none";
 
     canHit = true;
     canStay = true;
@@ -165,11 +132,17 @@ function firstGame() {
     // document.getElementById("hit").addEventListener("click", hit);
     // document.getElementById("stay").addEventListener("click", stay);
 
-    // playerSumEl.innerHTML = playerSum;
+    playerSumEl.innerHTML = playerSum;
+
+    // if (playerSum = 21) {
+    //     hasBlackJack = true;
+    //     stay();
+    // }
 }
     
 function hit() {
     if (!canHit) {
+        alert("hit not working");
         return;
     }
     let cardImg = document.createElement("img");
@@ -203,32 +176,29 @@ function stay() {
 
     } else if (playerSum > 21) {
         credit -= 1;
-        message = "You Lose " + player.name + "!<br>Your Credit has gone down by 1 and is now: " + credit;
+        message = "You Lose " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has gone down by 1 and is now: " + credit;
 
     } else if (dealerSum > 21) {
         credit += 3;
-        message = "You Win " + player.name + "!<br>Your Credit has gone up by 3 and is now:" + credit;
+        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has gone up by 3 and is now:" + credit;
 
     } else if (playerSum == dealerSum) {
         message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
 
     } else if (playerSum > dealerSum) {
         credit += 1;
-        message = "You Win " + player.name + "!<br>Your Credit has not changeda and is now:" + credit;
+        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has not changeda and is now:" + credit;
 
     } else if (playerSum < dealerSum) {
-        message = "You Lose " + player.name + "";
+        message = "You Lose " + localStorage.getItem("bj-playerName") + "";
     }
     messageEl.innerHTML = message;
-    playerEl.innerHTML = "Credit: " + credit;
+
 
     dealerSumEl.innerHTML = dealerSum;
     playerSumEl.innerHTML = playerSum;
 
-    console.log("before: " + cardsDeck);
-    console.log(hidden);
-    document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
-    console.log("after: " + cardsDeck);
+    beforeRestart() 
 
 }
 
@@ -243,6 +213,12 @@ function getValue(card) {
         return 10;
     }
     return parseInt(value);
+}
+
+function beforeRestart() {
+    bttnHit.style.display = "none";
+    bttnStay.style.display = "none";
+    bttnReset.style.display = "inline";
 }
 
 function restartGame() {

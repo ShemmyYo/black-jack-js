@@ -14,7 +14,7 @@
         <div id="game-box-cards">
 <!-- Dealer's Cards & Sum start here-->
             <div id="inner-game-box-cards-dealer">
-                <h2>Dealer: <span id="dealer-sum"></span></h2>
+                <h2 id="dealer-name-h2">Dealer: <span id="dealer-sum"></span></h2>
                 <div id="dealer-cards">
                     <img id="hidden" src="./assets/images/deck/back.png" alt="">
                 </div>
@@ -23,11 +23,11 @@
 <!-- =============== Messages box starts here =============== -->
         </div>
         <div id="inner-game-box-msg">
-            <h1 id="blackjack">Blackjack</h1>
-            <p id="player-el">Player Name:</p>
+            <h1 id="blackjack-el">Blackjack</h1>
+            <!-- <p id="player-el">Player Name:</p> -->
             <p id="message-el">Want to play a round?</p>
-            <p id="cards-el"></p>
-            <div id="box-empty"></div>
+            <!-- <p id="cards-el"></p> -->
+            <!-- <div id="box-empty"></div> -->
         </div>
 <!-- =============== Messages box ends here =============== -->
 <!-- =============== Players's Cards & Sum start here ===============-->
@@ -39,8 +39,8 @@
     </div>
 <!-- =============== Players's Cards & Sum end here =============== -->
     <div id="bttn-wrapper">
-        <button class="button" id="bttn-hit">Draw a Card</button>
-        <button class="button" id="bttn-stay">Stay</button>
+        <button class="button" id="bttn-hit" onclick="hit()">Hit!</button>
+        <button class="button" id="bttn-stay" onclick="stay()">Stay</button>
         <button class="button" id="bttn-start">Start New Game</button>
         <button class="button" id="bttn-reset" onclick="restartGame()">Reset Game</button>
     </div>
