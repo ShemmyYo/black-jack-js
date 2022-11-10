@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-welcome.css">
+    <link rel="stylesheet" href="assets/css/style-scorec.css">
+    <title>Blackjack</title>
+</head>
+<div id="game-wrap">
+    <div id="game-box">
+        <div id="game-box-cards">
+
+            <div id="inner-game-box-cards-dealer">
+                <h2>Dealer: <span id="dealer-sum"></span></h2>
+                <div id="dealer-cards">
+                    <img id="hidden" src="./assets/images/deck/back.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div id="inner-game-box-msg">
+            <h1>Blackjack</h1>
+            <p id="player-el">Player Name:</p>
+            <p id="message-el">Want to play a round?</p>
+            <p id="cards-el"></p>
+            <p id="sum-el"></p>
+            <div id="box-empty"></div>
+        </div>
+
+        <div id="inner-game-box-cards-player"></div>
+        <h2>You: <span id="player-sum"></span></h2>
+        <div id="player-cards">
+        </div>
+    </div>
+
+
+    <div id="bttn-wrapper">
+        <button class="button" id="hit">Draw a Card</button>
+        <button class="button" id="stay">Stay</button>
+        <button class="button" id="bttn-start" onclick="restartGame()">Start New Game</button>
+    </div>
+</div>
+<!-- GAME BOX Ends here -->
+<div id="scores-box">
+    <p id="round-el"></p>
+    <p id="credit-el"></p>
+</div>
+</div>
+<script src="assets/js/script.js"></script>
+<script src="https://kit.fontawesome.com/d1f1e1791a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

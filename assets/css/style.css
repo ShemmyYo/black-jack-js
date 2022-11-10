@@ -16,7 +16,8 @@ body {
 }
 
 h1 {
-    color: var(--gold);
+    background: rgb(32,218,210);
+    background: linear-gradient(0deg, rgba(32,218,210,0) 3%, rgba(218,165,32,0.4962359943977591) 13%, rgba(1,27,0,0.5018382352941176) 21%, rgba(255,251,230,0) 50%, rgba(218,165,32,0.24693627450980393) 73%, rgba(32,218,213,0) 97%);color: var(--gold);
     font-size: 300%;
 }
 
@@ -25,9 +26,18 @@ h2 {
 }
 
 h1,
-h2,
-h3 {
-    padding: 50px 3%;
+h2 {
+    padding: 50px 3% 0 3%; 
+}
+
+p {
+    padding-bottom: 5px;
+    font-size: 85%;
+}
+
+span:hover{
+    transform: scale(1.1);
+    transition: all 1000ms;
 }
 
 #outer-box {
@@ -59,6 +69,13 @@ h3 {
     border: 1px solid #013200;
     border-radius: 24px;
     box-shadow: 2px 1px 5px var(--shadow-box);
+}
+
+.wraper{
+    border: 1px solid #013200;
+    border-radius: 24px;
+    box-shadow: 2px 1px 5px var(--shadow-box);
+    margin: 3%;
 }
 
 #instructions-wraper {
@@ -115,18 +132,28 @@ h3 {
     margin: 1% 5%;
 }
 
-#player-new-name-empty,
-#bttn-save-player-name,
-#change-player,
-player-old-name-empty,
-#enter-game,
-#input-player-name {
+#login-menu {
+    padding: 0 5%;
+}
+
+#enter-game-msg {
+    display: inline;
+    margin-bottom: 300px;
+}
+
+#player-new-name-empty{
+    display: inline;
+}
+
+#player-old-name-empty {
     display: none;
 }
 
-#player-name-empty {}
+#player-name-empty {
+}
 
-#bttn-save-player-name {}
+#bttn-save-player-name {  
+}
 
 /* ------------------------
     MAIN GAME BOX 
@@ -231,7 +258,6 @@ player-old-name-empty,
 
 .button:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: var(--shadow-box);
     text-decoration: none;
 }
@@ -252,7 +278,7 @@ player-old-name-empty,
 #social-links li {
     display: inline;
     padding: 20px;
-    font-size: 200%;
+    font-size: 170%;
     align-items: center;
 }
 
@@ -263,6 +289,8 @@ player-old-name-empty,
 
 #social-links i:hover {
     color: var(--gold);
+    transform: scale(1.4);
+    transition: all 1000ms;
 }
 
 #copyright-container {

@@ -6,53 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style-welcome.css">
-    <link rel="stylesheet" href="assets/css/style-scorec.css">
     <title>Blackjack</title>
 </head>
-<div id="game-wrap">
-    <div id="game-box">
-        <div id="game-box-cards">
 
-            <div id="inner-game-box-cards-dealer">
-                <h2>Dealer: <span id="dealer-sum"></span></h2>
-                <div id="dealer-cards">
-                    <img id="hidden" src="./assets/images/deck/back.png" alt="">
+<body>
+    <div id="outer-box">
+        <div id="welcome-box">
+            <div id="instructions-wraper">
+                <div id="instructions-bg-wraper">
+                    <h1>Blackjack</h1>
+                    <div id="login-menu">
+                        <div id="player-new-name-empty">
+                            <form>
+                                <input type="text" id="input-player-name" class="button" placeholder="type your name here" autofocus
+                                    required>
+                                <button type="button" id="bttn-save-player-name" class="button">Save Your
+                                    Name</button>
+                            </form>
+                        </div>
+                        <div id="player-old-name-empty">
+                            <h2 id="enter-game-msg">Welcome!</h2>
+                            <a href="game.html"><button type="button" id="enter-game" class="button">Enter Blackjack!</button></a>
+                            <button type="button" id="change-player" class="button">Change User</button>
+                        </div>  
+                    </div>
+                    <div class="wraper">
+                        </a><h3>Beat The Dealer</h3>
+                        <p>The aim of blackjack is to finish the game with a higher total than that of the dealer, without
+                            exceeding
+                            21.
+                            Going over 21 is commonly known as ‘busting’ and means an automatic loss.</p>
+                        <p></p>
+                        <div id="span-wrap">
+                            <span>
+                                <h3>How do you beat the dealer?</h3>
+                                <p>By drawing a hand value that is higher than the dealer’s hand value</p>
+                                <p>By the dealer drawing a hand value that goes over 21.</p>
+                                <p>By drawing a hand value of 21 on your first two cards, when the dealer does not.</p>
+                            </span>
+                            <span>
+                                <h3>How do you lose to the dealer?</h3>
+                                <p>Your hand value exceeds 21.</p>
+                                <p>The dealers hand has a greater value than yours at the end of the round</p>
+                            </span>
+                            <span>
+                                <h3>How Do You Find a Hand’s Total Value?</h3>
+                                <p>Cards 2 through to 10 count at face value, i.e. a 2 counts as two, a 9 counts as nine.
+                                </p>
+                                <p>Jack, Queen and King count as 10.</p>
+                                <p>Ace counts as 11</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="social-media-container">
+                    <ul id="social-links">
+                        <li><a href="index.html"><i class="fa-solid fa-house-user"></i></a></li>
+                        <li><a href="game.html"><i class="fa-regular fa-heart"></i></a></li>
+                        <li><a href="scores.html"><i class="fa-regular fa-star"></i></a></li>
+                        <li><a href="https://github.com/ShemmyYo/black-jack-js" target="_blank" rel="noopener"
+                                aria-label="Visit my GitHub page(opens in a new tab)">
+                                <i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/przemek-shemmy-gotner/" target="_blank" rel="noopener"
+                                aria-label="Visit my LinkedIn page(opens in a new tab)">
+                                <i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
-
+            <footer id="footer-wrapper">
+                <div id="copyright-container">
+                    <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
+                        aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo -
+                        Project developed for Educational purposes</a>
+                </div>
+            </footer>
         </div>
-        <div id="inner-game-box-msg">
-            <h1>Blackjack</h1>
-            <p id="player-el">Player Name:</p>
-            <p id="message-el">Want to play a round?</p>
-            <p id="cards-el"></p>
-            <p id="sum-el"></p>
-            <div id="box-empty"></div>
-        </div>
-
-        <div id="inner-game-box-cards-player"></div>
-        <h2>You: <span id="player-sum"></span></h2>
-        <div id="player-cards">
-        </div>
-    </div>
-
-
-    <div id="bttn-wrapper">
-        <button class="button" id="hit">Draw a Card</button>
-        <button class="button" id="stay">Stay</button>
-        <button class="button" id="bttn-start" onclick="restartGame()">Start New Game</button>
-    </div>
-</div>
-<!-- GAME BOX Ends here -->
-<div id="scores-box">
-    <p id="sum-el"></p>
-    <p id="round-el"></p>
-    <p id="credit-el"></p>
-</div>
-</div>
-<script src="assets/js/script.js"></script>
-<script src="https://kit.fontawesome.com/d1f1e1791a.js" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="https://kit.fontawesome.com/d1f1e1791a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
