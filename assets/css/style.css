@@ -181,6 +181,7 @@ span:hover{
     border-radius: 24px;
     box-shadow: 2px 1px 5px var(--shadow-box);
     margin: 40px 10% auto;
+    padding-bottom: 50px;
 }
 
 #game-box-cards {
@@ -190,7 +191,7 @@ span:hover{
 
 #inner-game-box-cards-dealer,
 #inner-game-box-cards-player {
-    min-height: 221px; 
+    height: 271px; 
     margin: 0;
     padding: 0;
 }
@@ -235,7 +236,7 @@ span:hover{
     justify-content: center;
     align-items: center;
 
-    min-height: 150px;
+    height: 150px;
     margin: 10px 20%;
     font-size: 120%;
     
@@ -336,8 +337,8 @@ span:hover{
 }
 
 .cards {
-    height: 175px;
-    min-width: 120px;
+    max-height: 175px;
+    max-width: 120px;
     border: 1px solid goldenrod;
     border-radius: 8px;
     margin: -1%;
@@ -449,14 +450,6 @@ right side screen hidden
 
     body {
         font-size: 70%;
-
-
-        /* background-image: url("../images/blackjack-bg-v.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
-        text-align: center; */
     }
 
     #instructions-bg-wraper span {
@@ -521,31 +514,44 @@ right side screen hidden
         padding: 0 0 0 5px ;
     }
 
-
-    /* #back-wrapper #card-back {
-        position: absolute;
-        top: -20px;
-        right: 10px;
-    }
-    
-    #back-wrapper .cards {
-        height: 87.5px;
-        min-width: 40px;
-    }
-    
-    #deck-wrapper .cards {
-        height: 87.5px;
-        min-width: 40px;
-        margin: auto;
+    #game-box,
+    #game-wrap{
+        background-image: url("../images/blackjack-bg-v.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 1%;
+        font-size: 100%;
     }
 
-    #deck-wrapper {
-        height: 30%;
-        width: 100%;
+    #game-wrap{
+        padding-top: 35px;
+    }
+
+    #inner-game-box-cards-dealer,
+    #inner-game-box-cards-player {
+        height: 170px;
+    }
+    #message-el,
+    #inner-game-box-msg {
+        height: 100px;
+        padding: 5% 0 5% 0;
         margin: 0;
-        padding: 6% 0;
+    }
+
+    #dealer-cards,
+    #player-cards {
+        padding-right: 100px;
+    }
+
+    #dealer-cards img,
+    #player-cards img {
+        margin-right: -23%;
+        padding-left: 0;
+        width: 80px;
     }
 }
+
 
 @media screen and (min-width: 460px) and (max-width: 680px) {
 

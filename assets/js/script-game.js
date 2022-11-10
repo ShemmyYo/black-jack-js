@@ -174,6 +174,7 @@ function hit() {
 
 function stay() {
     canHit = false;
+    document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
 
     if (playerSum === 21) {
         credit += 5;
@@ -198,6 +199,7 @@ function stay() {
     } else if (playerSum < dealerSum) {
         credit -= 1;
         message = "You Lose " + localStorage.getItem("bj-playerName") + "";
+        
     }
     messageEl.innerHTML = message;
 
