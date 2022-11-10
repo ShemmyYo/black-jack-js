@@ -1,4 +1,4 @@
-// document.getElementById("bttn-card").style.display = "none";
+// document.getElementById("bttn-card").style.display = "none";s
 // document.getElementById("change-player").style.display = "none";
 // document.getElementById("enter-game").style.display = "none";
 
@@ -57,14 +57,14 @@ let message = "";
 
 window.onload = function() {
     console.log("game window onload");
-    playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":" ;
-    messageEl.innerHTML = "Do you want to play a round? <br><br>>>> START NEW GAME <<<"
+    playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":";
+    messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>"
 
 };
 
 bttnStart.addEventListener("click", function startFirstGame() {
     console.log("fisrt start");
-    messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br>>>> Hit! <<<<br>>>> STAY <<<<br><br>Are you feeling lucky???";
+    messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br><b>>>> Hit! <<<</b><br><b>>>> STAY <<<</b><br><br>Are you feeling lucky???";
     
     createDeck();
     shuffleDeck();
@@ -116,6 +116,7 @@ function firstGame() {
         let cardImg = document.createElement("img");
         let card = cardsDeck.pop();
         cardImg.src = "./assets/images/deck/" + card + ".png";
+        cardImg.classList = "cards";
         dealerSum += getValue(card);
         document.getElementById("dealer-cards").append(cardImg);
     }
@@ -125,19 +126,18 @@ function firstGame() {
         let cardImg = document.createElement("img");
         let card = cardsDeck.pop();
         cardImg.src = "./assets/images/deck/" + card + ".png";
+        cardImg.classList = "cards";
         playerSum += getValue(card);
         document.getElementById("player-cards").append(cardImg);
     }
-    // console.log("P: " + playerSum);
-    // document.getElementById("hit").addEventListener("click", hit);
-    // document.getElementById("stay").addEventListener("click", stay);
 
-    playerSumEl.innerHTML = playerSum;
+    console.log("P " + playerSum);
+    playerSumEl.innerHTML = "Total: " + playerSum;
 
-    // if (playerSum = 21) {
-    //     hasBlackJack = true;
-    //     stay();
-    // }
+    if (playerSum === 21) {
+        hasBlackJack = true;
+        stay();
+    }
 }
     
 function hit() {
@@ -153,18 +153,23 @@ function hit() {
 
     if (playerSum <= 20) {
         message = "Do you want to draw another card?";
+
     } else if (playerSum === 21) {
         message = "Congratulations!!! You've got a Blackjack!";
-        hasBlackJack = true;
-        canHit = false;
+
+        // hasBlackJack = true;
+        // canHit = false;
+
     } else {
         message = "";
-        canHit = false;
+        playerSumEl.innerHTML = "Total: " + playerSum;
+
+        // canHit = false;
         stay();
     }
     messageEl.innerHTML = message;
 
-    playerSumEl.innerHTML = playerSum;
+    playerSumEl.innerHTML = "Total: " + playerSum;
 }
 
 function stay() {
@@ -172,31 +177,33 @@ function stay() {
 
     if (playerSum === 21) {
         credit += 5;
-        message = "Congratulations!!! You've got a Blackjack!<br>Your Credit has gone up by 5 and is now: " + credit;
+        message = "Congratulations!!! You've got a Blackjack!<br><br>Your Credit has gone up by 5 and is now: " + credit;
+
 
     } else if (playerSum > 21) {
         credit -= 1;
-        message = "You Lose " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has gone down by 1 and is now: " + credit;
+        message = "You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down by 1 and is now: " + credit;
 
     } else if (dealerSum > 21) {
-        credit += 3;
-        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has gone up by 3 and is now:" + credit;
+        credit += 2;
+        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone up by 3 and is now:" + credit;
 
     } else if (playerSum == dealerSum) {
         message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
 
     } else if (playerSum > dealerSum) {
-        credit += 1;
-        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br>Your Credit has not changeda and is now:" + credit;
+
+        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has not changed and is now:" + credit;
 
     } else if (playerSum < dealerSum) {
+        credit -= 1;
         message = "You Lose " + localStorage.getItem("bj-playerName") + "";
     }
     messageEl.innerHTML = message;
 
 
-    dealerSumEl.innerHTML = dealerSum;
-    playerSumEl.innerHTML = playerSum;
+    dealerSumEl.innerHTML = " & his card's total: " + dealerSum;
+    playerSumEl.innerHTML = "Total: " + playerSum;
 
     beforeRestart() 
 

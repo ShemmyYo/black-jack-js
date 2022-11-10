@@ -168,18 +168,19 @@ span:hover{
 #game-wrap {
     background-image: url("/assets/images/blackjack-bg.jpg" );
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    height: 100vh;
+    padding: 2%;
+}
 
+#game-box {
+    background-image: url("/assets/images/bj-bg-h.jpg" );
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 1px solid var(--bg-dark-green);
     border-radius: 24px;
     box-shadow: 2px 1px 5px var(--shadow-box);
-    margin: 2%;
-    min-height: 850px;
-}
-
-
-#game-box {
-
+    margin: 40px 10% auto;
 }
 
 #game-box-cards {
@@ -189,10 +190,13 @@ span:hover{
 
 #inner-game-box-cards-dealer,
 #inner-game-box-cards-player {
-    
     min-height: 221px; 
     margin: 0;
     padding: 0;
+}
+
+#player-cards{
+    padding-bottom: 5%;
 }
 
 #dealer-cards img,
@@ -206,14 +210,20 @@ span:hover{
 }
 
 #dealer-name-h2{
-    margin-right: 40%;
+    text-align: left;
+    padding-left: 20%;
+    padding-top:3%;
+    
+
 }
 
-#player-name-h2{
+#player-sum,
+#player-name-h2 {
+    text-align: left;
     padding: 0;
+    padding-left: 20%;
     margin: 0;
     margin-bottom: 15px;
-    margin-right: 40%;
 }
 
 /* ---------------- 
@@ -248,6 +258,11 @@ span:hover{
     /* margin: auto; */
 }
 
+/* #dealer-sum,
+#player-sum {
+    display: inline;
+} */
+
 /* ---------------- 
     GAME Buttons 
 ---------------- */
@@ -267,13 +282,13 @@ span:hover{
 
 #bttn-reset{
     display: none;
-    min-width: 404px;
+    width: 404px;
     /* margin-left: calc(50% - 202px); */
 }
 
 #bttn-start {
     display: block;
-    min-width: 404px;
+    width: 404px;
     /* margin-left: calc(50% - 202px); */
     margin: auto;
 }
@@ -307,31 +322,10 @@ span:hover{
     transform: scale(0.95);
 }
 
-.spare-code {
-    /* cards */
-
-    /* #back-wrapper {
-    position: relative;
-} */
-
-    /* #back-wrapper #card-back {
-    position: absolute;
-    top: -50px;
-    right: 50px;
-    border: 2px solid black;
-    float: right;
-}
-
-#back-wrapper .cards {
-    height: 175px;
-    min-width: 120px;
-    border: 1px solid goldenrod;
-    border-radius: 8px;
-    margin: -1%;
-    overflow: hidden;
-} */
-
-    /* #deck-wrapper {
+/* ---------------- 
+    GAME Cards 
+---------------- */
+.deck-wrapper {
     position: fixed;
     bottom: 150px;
     left: 0;
@@ -341,7 +335,7 @@ span:hover{
     margin: auto;
 }
 
-#deck-wrapper .cards {
+.cards {
     height: 175px;
     min-width: 120px;
     border: 1px solid goldenrod;
@@ -349,15 +343,42 @@ span:hover{
     margin: -1%;
     overflow: hidden;
     margin: auto;
-} */
-
-
-    /* Buttons */
-
 }
 
 
+/* --------------------------------
+        GAME MEDIA Buttons 
+--------------------------------  */
+#media-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
 
+#media-links li {
+    display: inline;
+    padding: 20px;
+    font-size: 170%;
+    align-items: center;
+}
+
+#media-links i {
+    color: var(--gold);
+    padding: 0 20px;
+    transform: scale(1.0);
+    transition: all 1000ms;
+    margin: 0;
+}
+
+#media-links i:hover {
+    color: var(--bg-dark-green);
+    transform: scale(2);
+    transition: all 1000ms;
+    margin: 0 10%;
+}
 
 
 
@@ -482,6 +503,25 @@ right side screen hidden
         font-size: xx-small;
     }
 
+    #bttn-wraper{
+        padding: auto;
+    }
+    #bttn-reset{
+        display: none;
+        width: 200px;
+        margin: 0 auto;
+    }
+    
+    #bttn-start {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    #media-links {
+        padding: 0 0 0 5px ;
+    }
+
+
     /* #back-wrapper #card-back {
         position: absolute;
         top: -20px;
@@ -505,15 +545,6 @@ right side screen hidden
         margin: 0;
         padding: 6% 0;
     }
-
-    #bttn-wrapper {
-        position: fixed;
-        bottom: 30px;
-        left: 0;
-        width: 100%;
-        height: 170px;
-        margin: auto;
-    } */
 }
 
 @media screen and (min-width: 460px) and (max-width: 680px) {
