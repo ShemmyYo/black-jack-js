@@ -259,6 +259,7 @@ span:hover{
 
     height: 150px;
     margin: 10px 20%;
+    padding: 0 3% 0 3%;
     font-size: 120%;
 }
 
@@ -490,11 +491,13 @@ span:hover{
 
     #dealer-name-h2,
     #player-name-h2 {
+        font-size: 120%;
         padding-left: 10px;
     }
 
     #inner-game-box-msg { 
         font-size: 100%;
+        padding: 0 2% 0 2%;
     }
     
 

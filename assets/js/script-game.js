@@ -217,7 +217,7 @@ function stay() {
     }
     messageEl.innerHTML = message;
 
-    dealerSumEl.innerHTML = " & his card's total: " + dealerSum;
+    dealerSumEl.innerHTML = " total: " + dealerSum;
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
 
