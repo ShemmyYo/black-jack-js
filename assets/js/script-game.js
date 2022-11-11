@@ -250,7 +250,7 @@ function beforeRestart() {
         localStorage.clear("bj-credit");
         localStorage.clear("bj-round");
         alert("credit 0 - Game Over");
-        window.location.pathname = ('/index.html');
+        window.location.pathname = ('black-jack-js/index.html');
     };
 }
 

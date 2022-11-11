@@ -382,6 +382,7 @@ span:hover{
     height: 60px;
     text-align: center;
     background-color: rgba(11, 141, 54, 0.315);
+    margin: 0;
     margin-right: 4%;
     border-bottom-right-radius: 48px;
     transition: all 2s linear;
@@ -389,7 +390,7 @@ span:hover{
 
 #media-links li {
     display: inline;
-    padding: 20px;
+    padding: 0 20px;
     font-size: 170%;
     align-items: center;
 }
@@ -417,20 +418,21 @@ span:hover{
 -------------------------------- */
 #social-links {
     position:fixed;
-    bottom: 10px;
+    bottom: 25px;
     left: 0;
     width: 100%;
-    height: 60px;
-    text-align: center;
-    background-color: rgba(11, 141, 54, 0.315);
-    margin-left: 4%;
+    height: 35px;
+    padding: 1px 5% 25px 5%;
+    text-align: left;
+    background-color: rgba(11, 141, 54, 0.5);
+    margin: 0;
+    margin-left: 40%;
     border-top-left-radius: 48px;
     transition: all 2s linear;
 }
 
 #social-links li {
     display: inline;
-    padding: 20px;
     font-size: 170%;
     align-items: center;
 }
@@ -503,7 +505,7 @@ span:hover{
 
     #social-media-container {
         position: fixed;
-        bottom: 20px;
+        bottom: 40px;
         left: 0;
         width: 100%;
         height: 150px;
@@ -525,28 +527,26 @@ span:hover{
 
     #social-links {
         width: 100%;
-        height: 35px;
+        height: 40px;
         padding: 0;
         margin: 0;
-        margin-left: 4%;
+        margin-left: 30%;
     }
     #media-links {
         width: 100%;
-        height: 35px;
+        height: 40px;
         padding: 0 0 0 5px ;
         margin: 0;
         margin-right: 4%;
     }
 
     #social-links li {
-        display: inline;
-        padding: 25px;
+        padding-left: 30px;
         font-size: 150%;
-        align-items: center;
     }
     #media-links li {
         display: inline;
-        padding: 15px;
+        /* padding: 15px; */
         font-size: 150%;
         align-items: center;
     }
@@ -554,9 +554,10 @@ span:hover{
     #social-links i {
         color: var(--bg-dark-green);
         padding: 20px;
-        padding: 0;
+        padding: 5px 2% 5px 2%;
         margin: 0;
-        transform: scale(1.0);
+        text-align: left;
+        transform: scale(0.9);
         transition: all 1000ms;
         
     }
@@ -572,7 +573,7 @@ span:hover{
         position: fixed;
         bottom: 0;
         left: 0;
-        height: 15px;
+        height: 20px;
     }
 
     #copyright-container a {
