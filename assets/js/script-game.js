@@ -49,7 +49,9 @@ let hasBlackJack = false;
 let howManyBlackJaks = 0;
 
 let round = localStorage.getItem("bj-round");
+round = parseInt(round);
 let credit = localStorage.getItem("bj-credit");
+credit = parseInt(credit);
 
 let message = "";
 
@@ -65,6 +67,9 @@ window.onload = function() {
     creditEl.innerHTML = "Credit: " + localStorage.getItem("bj-credit");
     roundEl.innerHTML = "Round :" + localStorage.getItem("bj-round");
     messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>";
+
+    round +=1;
+    roundEl.innerHTML = "Round: " + round;
 
 };
 
@@ -140,7 +145,6 @@ function firstGame() {
     console.log("P " + playerSum);
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
-    roundEl.innerHTML = "Round: " + round;
 
     if (playerSum === 21) {
         hasBlackJack = true;
@@ -172,7 +176,6 @@ function hit() {
         message = "";
         totalEl.innerHTML = "Total: " + playerSum;
         creditEl.innerHTML = "Credit: " + credit;
-        roundEl.innerHTML = "Round: " + round;
 
         // canHit = false;
         stay();
@@ -181,7 +184,6 @@ function hit() {
 
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
-    roundEl.innerHTML = "Round: " + round;
 }
 
 function stay() {
@@ -190,37 +192,34 @@ function stay() {
 
     if (playerSum === 21) {
         credit += 5;
-        message = "Congratulations!!! You've got a Blackjack!<br><br>Your Credit has gone up by 5 and is now: " + credit;
+        message = "Round: " + round +" - Congratulations!!! You've got a Blackjack!<br><br>Your Credit has gone up by +5 and is now " + credit;
 
 
     } else if (playerSum > 21) {
         credit -= 1;
-        message = "You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down by 1 and is now: " + credit;
+        message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down by -1 and is now " + credit;
 
     } else if (dealerSum > 21) {
         credit += 2;
-        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone up by 3 and is now:" + credit;
+        message = "Round: " + round +" - You (not quite...) Win " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone up by +2 and is now " + credit;
 
     } else if (playerSum == dealerSum) {
         message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
 
     } else if (playerSum > dealerSum) {
 
-        message = "You Win " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has not changed and is now:" + credit;
+        message = "Round: " + round +" - You Win " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has not changed and is " + credit;
 
     } else if (playerSum < dealerSum) {
         credit -= 1;
-        message = "You Lose " + localStorage.getItem("bj-playerName") + "";
+        message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit done doen to " + credit;
         
     }
     messageEl.innerHTML = message;
 
-    round +=1;
-
     dealerSumEl.innerHTML = " & his card's total: " + dealerSum;
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
-    roundEl.innerHTML = "Round: " + round;
 
     beforeRestart();
 
@@ -244,13 +243,15 @@ function beforeRestart() {
     bttnStay.style.display = "none";
     bttnReset.style.display = "inline";
 
-    console.log(round);
-
-    localStorage.clear("bj-credit");
     localStorage.setItem("bj-credit", credit);
-
-    localStorage.clear("bj-round");
     localStorage.setItem("bj-round", round);
+
+    if (credit === 0) {
+        localStorage.clear("bj-credit");
+        localStorage.clear("bj-round");
+        alert("credit 0 - Game Over");
+        window.location.pathname = ('/index.html');
+    };
 }
 
 function restartGame() {

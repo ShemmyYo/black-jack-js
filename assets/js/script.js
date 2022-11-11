@@ -41,8 +41,8 @@ loginBttnSaveNewPlayerEl.addEventListener("click", function addPlayer(){
         alert("Enter and save Your name Player! ");
     } else {
         localStorage.setItem("bj-playerName", loginInputPlayerEl.value);
-        localStorage.setItem("bj-credit", "3");
-        localStorage.setItem("bj-round", "1");
+        localStorage.setItem("bj-credit", 3);
+        localStorage.setItem("bj-round", 1);
 
         loginMsgBoxEl.innerHTML = "Welcome! " + localStorage.getItem("bj-playerName");
 
