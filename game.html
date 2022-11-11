@@ -20,12 +20,20 @@
 <!-- =============== GAME BOX Starts here =============== -->
 <div id="game-wrap">
     <div id="game-box">
+    <!-- =============== GAME SCORES Start here =============== -->
+    <div id="scores-box">
+        <p id="player-sum">Total:</p>
+        <p id="credit-el">Credit:</p>
+        <p id="round-el">Round:</p>
+    </div>
+    <!-- =============== GAME SCORES End here =============== -->
+
         <div id="game-box-cards">
             <!-- Dealer's Cards & Sum start here-->
             <div id="inner-game-box-cards-dealer">
                 <h2 id="dealer-name-h2">Dealer<span id="dealer-sum">:</span></h2>
                 <div id="dealer-cards">
-                    <img id="hidden" class="cards" src="./assets/images/deck/back.png" alt="">
+                    <img id="hidden" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
                 </div>
             </div>
             <!-- =============== Dealer's Cards & Sum end here =============== -->
@@ -40,10 +48,9 @@
         <div id="inner-game-box-cards-player">
             <div>
                 <h2 id="player-name-h2">You: </h2>
-                <div id="player-sum"></div>
             </div>
             <div id="player-cards">
-            </div>
+             </div>
         </div>
     </div>
     <!-- =============== Players's Cards & Sum end here =============== -->
@@ -55,12 +62,6 @@
     </div>
 
     <!-- =============== GAME BOX Ends here =============== -->
-    <!-- =============== GAME SCORES Start here =============== -->
-    <div id="scores-box">
-        <p id="round-el"></p>
-        <p id="credit-el"></p>
-    </div>
-    <!-- =============== GAME SCORES End here =============== -->
 </div>
 <footer id="footer-wrapper">
     <div id="copyright-container">

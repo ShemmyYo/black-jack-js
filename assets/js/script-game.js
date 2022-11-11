@@ -14,7 +14,6 @@
 // GAME Page DOM Elements
 let dealerSumEl = document.getElementById("dealer-sum");
 let dealerNameEl = document.getElementById("dealer-name-h2");
-let playerSumEl = document.getElementById("player-sum");
 let playerNameEl = document.getElementById("player-name-h2");
 // let cardsEl = document.getElementById("cards-el");
 // let playerEl = document.getElementById("player-el");
@@ -23,6 +22,10 @@ let playerNameEl = document.getElementById("player-name-h2");
 let messageBox = document.getElementById("inner-game-box-msg");
 let blackjackEl = document.getElementById("blackjack-el");
 let messageEl = document.getElementById("message-el");
+
+let totalEl = document.getElementById("player-sum");
+let creditEl = document.getElementById("credit-el");
+let roundEl = document.getElementById("round-el");
 
 //GAME buttons Elements
 let bttnStay = document.getElementById("bttn-stay");
@@ -44,21 +47,24 @@ let canStay = true;
 let canReset = false;
 let hasBlackJack = false;
 let howManyBlackJaks = 0;
-let round = 1;
-let credit = 3;
+
+let round = localStorage.getItem("bj-round");
+let credit = localStorage.getItem("bj-credit");
 
 let message = "";
 
 // playerEl.innerHTML = localStorage.getItem("bj-playerName") + " Credit: " + player.credit;
 // dealerSumEl.innerHTML = dealerSum;
-// playerSumEl.innerHTML = playerSum;
+// totalEl.innerHTML = playerSum;
 
 // Event Listeners
 
 window.onload = function() {
     console.log("game window onload");
     playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":";
-    messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>"
+    creditEl.innerHTML = "Credit: " + localStorage.getItem("bj-credit");
+    roundEl.innerHTML = "Round :" + localStorage.getItem("bj-round");
+    messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>";
 
 };
 
@@ -132,7 +138,9 @@ function firstGame() {
     }
 
     console.log("P " + playerSum);
-    playerSumEl.innerHTML = "Total: " + playerSum;
+    totalEl.innerHTML = "Total: " + playerSum;
+    creditEl.innerHTML = "Credit: " + credit;
+    roundEl.innerHTML = "Round: " + round;
 
     if (playerSum === 21) {
         hasBlackJack = true;
@@ -162,14 +170,18 @@ function hit() {
 
     } else {
         message = "";
-        playerSumEl.innerHTML = "Total: " + playerSum;
+        totalEl.innerHTML = "Total: " + playerSum;
+        creditEl.innerHTML = "Credit: " + credit;
+        roundEl.innerHTML = "Round: " + round;
 
         // canHit = false;
         stay();
     }
     messageEl.innerHTML = message;
 
-    playerSumEl.innerHTML = "Total: " + playerSum;
+    totalEl.innerHTML = "Total: " + playerSum;
+    creditEl.innerHTML = "Credit: " + credit;
+    roundEl.innerHTML = "Round: " + round;
 }
 
 function stay() {
@@ -203,11 +215,14 @@ function stay() {
     }
     messageEl.innerHTML = message;
 
+    round +=1;
 
     dealerSumEl.innerHTML = " & his card's total: " + dealerSum;
-    playerSumEl.innerHTML = "Total: " + playerSum;
+    totalEl.innerHTML = "Total: " + playerSum;
+    creditEl.innerHTML = "Credit: " + credit;
+    roundEl.innerHTML = "Round: " + round;
 
-    beforeRestart() 
+    beforeRestart();
 
 }
 
@@ -228,6 +243,14 @@ function beforeRestart() {
     bttnHit.style.display = "none";
     bttnStay.style.display = "none";
     bttnReset.style.display = "inline";
+
+    console.log(round);
+
+    localStorage.clear("bj-credit");
+    localStorage.setItem("bj-credit", credit);
+
+    localStorage.clear("bj-round");
+    localStorage.setItem("bj-round", round);
 }
 
 function restartGame() {

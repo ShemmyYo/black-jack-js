@@ -28,6 +28,8 @@ function validatePlayer() {
 loginBttnChangePlayerEl.addEventListener("click", function remPlayer(){
     console.log("clear user");
     localStorage.clear("bj-playerName");
+    localStorage.clear("bj-credit");
+    localStorage.clear("bj-round");
 
     loginNewPlayerBoxEl.style.display = "inline";
     loginOldPlayerBoxEl.style.display = "none";
@@ -39,6 +41,9 @@ loginBttnSaveNewPlayerEl.addEventListener("click", function addPlayer(){
         alert("Enter and save Your name Player! ");
     } else {
         localStorage.setItem("bj-playerName", loginInputPlayerEl.value);
+        localStorage.setItem("bj-credit", "3");
+        localStorage.setItem("bj-round", "1");
+
         loginMsgBoxEl.innerHTML = "Welcome! " + localStorage.getItem("bj-playerName");
 
         loginNewPlayerBoxEl.style.display = "none";
