@@ -166,7 +166,7 @@ span:hover{
 ------------------------*/
 
 #game-wrap {
-    background-image: url("/assets/images/blackjack-bg.jpg" );
+    background-image: url("../images/blackjack-bg.jpg" );
     background-size: cover;
     background-repeat: repeat;
     height: 100vh;
@@ -174,7 +174,7 @@ span:hover{
 }
 
 #game-box {
-    background-image: url("/assets/images/bj-bg-h.jpg" );
+    background-image: url("../images/bj-bg-h.jpg" );
     background-size: cover;
     background-repeat: no-repeat;
     border: 1px solid var(--bg-dark-green);
