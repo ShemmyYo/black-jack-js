@@ -14,8 +14,8 @@
 <div id="media-container">
     <ul id="media-links">
         <li><a href="index.html"><i class="fa-solid fa-house-user"></i></a></li>
-        <li><a href="game.html"><i class="fa-solid fa-gamepad"></i></a></li>
-        <li><a href="scores.html"><i class="fa-solid fa-star"></i></a></li>
+        <li><a href="#" onclick="hideScores()"><i class="fa-solid fa-gamepad"></i></a></li>
+        <li><a href="#" onclick="showHighScores()"><i class="fa-solid fa-star"></i></a></li>
     </ul>
 </div>
 <!-- =============== GAME MENU Ends here =============== -->
@@ -69,8 +69,7 @@
     <div id="scores-bg-wraper">
         <h2>High Scores</h2>
         <ol id="scores-list-style"></ol>
-        <button id="bttn-save-score" class="button" onclick="saveHighScore()">save score / Play again</button>
-        <a href="index.html"><button id="bttn-back-to-welcome" class="button" onclick="">Back Home</button></a>
+        <a href="index.html"><button id="bttn-back-to-welcome" class="button" onclick="">Reset Game</button></a>
         <button id="bttn-clear-score" class="button" onclick="clearScores()">Clear High Scores</button>
     </div>
 </div>

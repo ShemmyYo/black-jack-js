@@ -19,6 +19,10 @@ function validatePlayer() {
         loginMsgBoxEl.innerHTML = "Welcome back! " + localStorage.getItem("bj-playerName");
         loginNewPlayerBoxEl.style.display = "none";
         loginOldPlayerBoxEl.style.display = "inline";
+        localStorage.clear("bj-credit");
+        localStorage.clear("bj-round");
+        localStorage.setItem("bj-credit", 3);
+        localStorage.setItem("bj-round", 0);
   
     } else {
         addPlayer();

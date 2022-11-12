@@ -22,6 +22,7 @@ let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 // High Scores Buttons
 let bttnSave = document.getElementById("bttn-save-score");
 let bttnClearScores = document.getElementById("bttn-clear-score");
+let scoresWindow = document.getElementById("scores-wraper");
 
 
 // Variables
@@ -47,10 +48,10 @@ window.onload = function() {
     messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>";
     round +=1;
     roundEl.innerHTML = "Round: " + round;
-}
+};
 
 // Bttn START procedure
-bttnStart.addEventListener("click", function startFirstGame() {
+    bttnStart.addEventListener("click", function startFirstGame() {
     console.log("fisrt start");
     messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br><b>>>> Hit! <<<</b><br><b>>>> STAY <<<</b><br><br>Are you feeling lucky???";
     createDeck();
@@ -198,20 +199,18 @@ function beforeRestart() {
     bttnReset.style.display = "inline";
     localStorage.setItem("bj-credit", credit);
     localStorage.setItem("bj-round", round);
-    if (credit === 0) {
-        localStorage.clear("bj-credit");
-        localStorage.clear("bj-round");
+    if (credit <= 0) {
         alert("credit 0 - Game Over");
+        bttnReset.style.display = "none";
+        canPlay = false;
         saveHighScore();
-        // window.location.pathname = ('black-jack-js/scores.html');
-    };
+    }
 }
 
 //Function that creates object and array of name/round/score/time???
 function saveHighScore(){
-    // end.preventDefault();
     let nowDate = new Date();
-    let scoreDate = nowDate.toLocaleString()  
+    let scoreDate = nowDate.toLocaleString();  
     let score = {
         round: localStorage.getItem('bj-round'),  
         player: localStorage.getItem('bj-playerName'),
@@ -226,18 +225,23 @@ function saveHighScore(){
 }
 
 function showHighScores() {
+    scoresWindow.style.display = "block";
     scoresList.innerHTML =
         highScores.map(score => {
         return `<li class="scores-list-style">Rounds: ${score.round} - ${score.player} - ${score.when}</li>`;
     }).join('');
+    localStorage.clear("bj-credit");
+    localStorage.clear("bj-round");
 }
 
+function hideScores() {
+    scoresWindow.style.display = "none";
+}
 
 // Function which clears High Scores
 function clearScores() {
     localStorage.clear("highScores");
     location.reload(true);
-    bttnS
 }
 
 // Reset function
