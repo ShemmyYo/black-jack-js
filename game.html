@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
     <title>Blackjack</title>
 </head>
 <!-- =============== GAME MANU Starts here =============== -->
@@ -21,13 +22,13 @@
 <!-- =============== GAME BOX Starts here =============== -->
 <div id="game-wrap">
     <div id="game-box">
-    <!-- =============== GAME SCORES Start here =============== -->
-    <div id="scores-box">
-        <p id="player-sum">Total:</p>
-        <p id="credit-el">Credit:</p>
-        <p id="round-el">Round:</p>
-    </div>
-    <!-- =============== GAME SCORES End here =============== -->
+        <!-- =============== GAME SCORES Start here =============== -->
+        <div id="scores-box">
+            <p id="player-sum">Total: 0</p>
+            <p id="credit-el">Credit:</p>
+            <p id="round-el">Round:</p>
+        </div>
+        <!-- =============== GAME SCORES End here =============== -->
 
         <div id="game-box-cards">
             <!-- Dealer's Cards & Sum start here-->
@@ -51,7 +52,7 @@
                 <h2 id="player-name-h2">You: </h2>
             </div>
             <div id="player-cards">
-             </div>
+            </div>
         </div>
     </div>
     <!-- =============== Players's Cards & Sum end here =============== -->
@@ -61,11 +62,20 @@
         <button class="button" id="bttn-start">Start New Game</button>
         <button class="button" id="bttn-reset" onclick="restartGame()">Reset Game</button>
     </div>
-
     <!-- =============== GAME BOX Ends here =============== -->
 </div>
-<footer id="footer-wrapper">
-    <div id="copyright-container">
+<!-- =============== High Scores BOARD Starts here =============== -->
+<div id="scores-wraper">
+    <div id="scores-bg-wraper">
+        <h2>High Scores</h2>
+        <ol id="scores-list-style"></ol>
+        <button id="bttn-save-score" class="button" onclick="saveHighScore()">save score / Play again</button>
+        <a href="index.html"><button id="bttn-back-to-welcome" class="button" onclick="">Back Home</button></a>
+        <button id="bttn-clear-score" class="button" onclick="clearScores()">Clear High Scores</button>
+    </div>
+</div>
+<!-- =============== High Scores BOARD Ends here =============== -->
+<footer id="footer-wrapper">  <div id="copyright-container">
         <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
             aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo -
             Project developed for Educational purposes</a>
