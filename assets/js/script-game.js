@@ -1,44 +1,23 @@
-// document.getElementById("bttn-card").style.display = "none";s
-// document.getElementById("change-player").style.display = "none";
-// document.getElementById("enter-game").style.display = "none";
-
-// WELCOME Page DOM Elements
-// let loginInputPlayerEl = document.getElementById("input-player-name");
-// let loginBttnSaveNewPlayerEl = document.getElementById("bttn-save-player-name");
-// let loginMsgBoxEl = document.getElementById("enter-game-msg");
-// let loginBttnChangePlayerEl = document.getElementById("change-player");
-// no need as only link button - let loginBttnEnterGameEl = document.getElementById("enter-game");
-// let loginNewPlayerBoxEl = document.getElementById("player-new-name-empty");
-// let loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
-
 // GAME Page DOM Elements
 let dealerSumEl = document.getElementById("dealer-sum");
 let dealerNameEl = document.getElementById("dealer-name-h2");
 let playerNameEl = document.getElementById("player-name-h2");
-// let cardsEl = document.getElementById("cards-el");
-// let playerEl = document.getElementById("player-el");
-
 // GAME messages Elements
 let messageBox = document.getElementById("inner-game-box-msg");
 let blackjackEl = document.getElementById("blackjack-el");
 let messageEl = document.getElementById("message-el");
-
 let totalEl = document.getElementById("player-sum");
 let creditEl = document.getElementById("credit-el");
 let roundEl = document.getElementById("round-el");
-
 //GAME buttons Elements
 let bttnStay = document.getElementById("bttn-stay");
 let bttnHit = document.getElementById("bttn-hit");
 let bttnStart = document.getElementById("bttn-start");
 let bttnReset = document.getElementById("bttn-reset");
-
-
 // Variables
 let cards;
 let cardsDeck;
 let hidden;
-
 let dealerSum = 0;
 let playerSum = 0;
 
@@ -54,12 +33,6 @@ let credit = localStorage.getItem("bj-credit");
 credit = parseInt(credit);
 
 let message = "";
-
-// playerEl.innerHTML = localStorage.getItem("bj-playerName") + " Credit: " + player.credit;
-// dealerSumEl.innerHTML = dealerSum;
-// totalEl.innerHTML = playerSum;
-
-// Event Listeners
 
 window.onload = function() {
     console.log("game window onload");
@@ -193,27 +166,19 @@ function stay() {
     if (playerSum === 21) {
         credit += 5;
         message = "Round: " + round +" - Congratulations!!! You've got a Blackjack!<br><br>Your Credit has gone up by +5 and is now " + credit;
-
-
     } else if (playerSum > 21) {
         credit -= 1;
         message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down by -1 and is now " + credit;
-
     } else if (dealerSum > 21) {
         credit += 2;
         message = "Round: " + round +" - You (not quite...) Win " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone up by +2 and is now " + credit;
-
     } else if (playerSum == dealerSum) {
         message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
-
     } else if (playerSum > dealerSum) {
-
         message = "Round: " + round +" - You Win " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has not changed and is " + credit;
-
     } else if (playerSum < dealerSum) {
         credit -= 1;
         message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit done doen to " + credit;
-        
     }
     messageEl.innerHTML = message;
 
