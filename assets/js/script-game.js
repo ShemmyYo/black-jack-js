@@ -220,7 +220,12 @@ function saveHighScore(){
     highScores.sort((a,b) => {
         return b.score - a.score;
     });
+    
     localStorage.setItem('highScores', JSON.stringify(highScores));
+    
+    localStorage.setItem("bj-credit", 3);
+    localStorage.setItem("bj-round", 0);
+
     showHighScores();
 }
 
@@ -230,8 +235,6 @@ function showHighScores() {
         highScores.map(score => {
         return `<li class="scores-list-style">Rounds: ${score.round} - ${score.player} - ${score.when}</li>`;
     }).join('');
-    localStorage.clear("bj-credit");
-    localStorage.clear("bj-round");
 }
 
 function hideScores() {
@@ -241,7 +244,7 @@ function hideScores() {
 // Function which clears High Scores
 function clearScores() {
     localStorage.clear("highScores");
-    location.reload(true);
+    location.reload(false);
 }
 
 // Reset function
