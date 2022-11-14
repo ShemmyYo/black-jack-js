@@ -34,6 +34,12 @@ let bttnSave = document.getElementById("bttn-save-score");
 let bttnClearScores = document.getElementById("bttn-clear-score");
 let scoresWindow = document.getElementById("scores-wraper");
 
+//sounds
+let shuffleSound = new Audio('assets/sounds/sfx-shuffling-cards.mp3');
+let defeatSound = new Audio('assets/sounds/sfx-defeat.mp3');
+let victorySound = new Audio('assets/sounds/sfx-victory.mp3');
+let bustedSound = new Audio('assets/sounds/sfx-busted.mp3');
+
 // Variables
 let cards;
 let cardsDeck;
@@ -84,6 +90,7 @@ function createDeck() {
 
 // Function shuffling deck of cards before randow card draw
 function shuffleDeck() {
+    shuffleSound.play();
     for (let i = 0; i < 52; i++) {
         let j = Math.floor(Math.random() * 52);
         let temp = cardsDeck[i];
@@ -161,10 +168,12 @@ function stay() {
         credit += 5;
         message = "Round: " + round +" - Congratulations!!!<br><br>Credit +5!";
         blackjackEl.style.display = "flex";
+        victorySound.play();
     } else if (playerSum > 21) {
         credit -= 1;
         message = "Round: " + round +" - You Lose!<br><br>Credit -1";
         bustedEl.style.display = "flex";
+        bustedSound.play();
     } else if (dealerSum > 21) {
         credit += 2;
         message = "Round: " + round +" - You (not quite...) Win? " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has not changed and is " + credit;
@@ -204,8 +213,11 @@ function beforeRestart() {
     localStorage.setItem("bj-credit", credit);
     localStorage.setItem("bj-round", round);
     if (credit <= 0) {
+        defeatSound.play();
         gameOverEl.style.display = "flex";
+        bustedEl.style.display = "none";
         bttnReset.style.display = "none";
+        bttnHighScores.style.display = "inline";
         saveHighScore();
     }
 }
