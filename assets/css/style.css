@@ -156,7 +156,7 @@ span:hover{
     background-image: url("../images/blackjack-bg.jpg" );
     background-size: cover;
     background-repeat: repeat;
-    height: 100vh;
+    height: 100%;
     padding: 2%;
 }
 
