@@ -233,26 +233,40 @@ span:hover{
     font-size: 120%;
 }
 
-
-
-
-
-
-
 #blackjack-el {
     display: none;
-    /* display: flex;
-    float: left;
-    transform: scale(2);
-    transition: all 0.2s ease-in-out; */
+    font-size: 80px;
+    margin: 50px 0 0 0;
+    padding: 0;
+    animation: 0.5s ease-out slide-in-efect;
 }
 
+#busted-el {
+    display: none;
+    font-size: 80px;
+    margin: 50px 0 0 0;
+    padding: 0;
+    color: var(--bg-dark-green);
+    animation: 0.5s ease-out slide-in-efect;
+}
 
+#game-over-el {
+    display: none;
+    font-size: 80px;
+    margin: 50px 0 0 0;
+    padding: 0;
+    color: var(--off-white);
+    animation: 0.5s ease-out slide-in-efect;
+}
 
-
-
-
-
+@keyframes slide-in-efect {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: sclale(100%);
+    }
+  }
 
 #scores-box {
     width: 100%;
@@ -301,11 +315,11 @@ span:hover{
     margin: auto;
 }
 
-.button {
+button {
     background-image: linear-gradient(45deg, #013200 0%, #F09819 51%, #daa520 100%);
     background-size: 200% auto;
     width: 200px;
-    margin: 15px;
+    margin: 25px 0;
     padding: 10px 30px;
     color: whitesmoke;
     font-family: 'Syncopate', sans-serif;
@@ -558,8 +572,34 @@ span:hover{
     #inner-game-box-msg { 
         font-size: 100%;
         padding: 0 2% 0 2%;
+        transition: all 2s linear;
     }
     
+    #blackjack-el {
+        display: none;
+        font-size: 40px;
+    }
+    
+    #busted-el {
+        display: none;
+        font-size: 40px;
+        margin: 25px 0 0 0;
+    }
+
+    #game-over-el {
+        display: none;
+        font-size: 40px;
+        margin: 25px 0 0 0;
+    }
+    
+    /* @keyframes slide-in-efect {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: sclale(100%);
+        }
+      } */
 
     #social-media-container {
         position: fixed;
@@ -648,7 +688,9 @@ span:hover{
 
     #bttn-wraper{
         padding: auto;
+        margin-bottom: 50px;
     }
+
     #bttn-reset{
         display: none;
         width: 200px;

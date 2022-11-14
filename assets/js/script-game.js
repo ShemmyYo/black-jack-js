@@ -2,28 +2,36 @@
 let dealerSumEl = document.getElementById("dealer-sum");
 let dealerNameEl = document.getElementById("dealer-name-h2");
 let playerNameEl = document.getElementById("player-name-h2");
+
 // GAME messages Elements
+let cardsAtStart1 = document.getElementById("cards-at-start1");
+let cardsAtStart2 = document.getElementById("cards-at-start2");
+let cardsAtStart3 = document.getElementById("cards-at-start3");
 let messageBox = document.getElementById("inner-game-box-msg");
 let blackjackEl = document.getElementById("blackjack-el");
+let bustedEl = document.getElementById("busted-el");
+let gameOverEl = document.getElementById("game-over-el");
 let messageEl = document.getElementById("message-el");
 let totalEl = document.getElementById("player-sum");
 let creditEl = document.getElementById("credit-el");
 let roundEl = document.getElementById("round-el");
+
 //GAME buttons Elements
 let bttnStay = document.getElementById("bttn-stay");
 let bttnHit = document.getElementById("bttn-hit");
 let bttnStart = document.getElementById("bttn-start");
 let bttnReset = document.getElementById("bttn-reset");
+
 // High Scores Elements
 let startGameAgainBtn = document.getElementById("startGameAgain");
 let scoresBgWraper = document.getElementById("scores-bg-wraper");
 let scoresList = document.getElementById("scores-list-style");
 let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
 // High Scores Buttons
 let bttnSave = document.getElementById("bttn-save-score");
 let bttnClearScores = document.getElementById("bttn-clear-score");
 let scoresWindow = document.getElementById("scores-wraper");
-
 
 // Variables
 let cards;
@@ -86,15 +94,13 @@ function shuffleDeck() {
 
 // Function witch renders cards for Player and Dealer (incl. hidden dealer card) 
 function firstGame() {
+    cardsAtStart1.style.display = "none";
+    cardsAtStart2.style.display = "none";
+    cardsAtStart3.style.display = "none";
     bttnStart.style.display = "none";
     bttnHit.style.display = "inline";
     bttnStay.style.display = "inline";
     bttnReset.style.display = "none";
-    canHit = true;
-    canStay = true;
-    canReset = false;
-    hasBlackJack = false;
-    canHit = true;
     hidden = cardsDeck.pop();
     dealerSum += getValue(hidden);
     console.log("hidden: " + hidden);
@@ -120,17 +126,12 @@ function firstGame() {
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
     if (playerSum === 21) {
-        hasBlackJack = true;
         stay();
     }
 }
     
 // Bttn HIT - Procedure which draws extra cards for the Player and pre-checks if busted or blackjack 
 function hit() {
-    if (!canHit) {
-        alert("hit not working");
-        return;
-    }
     let cardImg = document.createElement("img");
     let card = cardsDeck.pop();
     cardImg.src = "./assets/images/deck/" + card + ".png";
@@ -153,24 +154,25 @@ function hit() {
 
 // Bttn STAY - Procedure which checks status of the game adjusts credit / round and renders message for the Player 
 function stay() {
-    canHit = false;
     document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
     if (playerSum === 21) {
         credit += 5;
-        message = "Round: " + round +" - Congratulations!!! You've got a Blackjack!<br><br>Your Credit has gone up by +5 and is now " + credit;
+        message = "Round: " + round +" - Congratulations!!!<br><br>Credit +5!";
+        blackjackEl.style.display = "flex";
     } else if (playerSum > 21) {
         credit -= 1;
-        message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down by -1 and is now " + credit;
+        message = "Round: " + round +" - You Lose!<br><br>Credit -1";
+        bustedEl.style.display = "flex";
     } else if (dealerSum > 21) {
         credit += 2;
-        message = "Round: " + round +" - You (not quite...) Win " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone up by +2 and is now " + credit;
+        message = "Round: " + round +" - You (not quite...) Win? " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has not changed and is " + credit;
     } else if (playerSum == dealerSum) {
-        message = "Tie!<br>Your Credit has not changeda and is now:" + credit;
+        message = "Tie!<br><br>Your Credit has not changed and is still: " + credit;
     } else if (playerSum > dealerSum) {
-        message = "Round: " + round +" - You Win " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has not changed and is " + credit;
+        message = "Round: " + round +" - You (sort of...) Win? " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has not changed and is " + credit;
     } else if (playerSum < dealerSum) {
         credit -= 1;
-        message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>but Your Credit has gone down to " + credit;
+        message = "Round: " + round +" - You Lose " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has gone down to " + credit;
     }
     messageEl.innerHTML = message;
     dealerSumEl.innerHTML = " total: " + dealerSum;
@@ -200,9 +202,8 @@ function beforeRestart() {
     localStorage.setItem("bj-credit", credit);
     localStorage.setItem("bj-round", round);
     if (credit <= 0) {
-        alert("credit 0 - Game Over");
+        gameOverEl.style.display = "flex";
         bttnReset.style.display = "none";
-        canPlay = false;
         saveHighScore();
     }
 }
@@ -220,15 +221,13 @@ function saveHighScore(){
     highScores.sort((a,b) => {
         return b.score - a.score;
     });
-    
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    
+    localStorage.setItem('highScores', JSON.stringify(highScores)); 
     localStorage.setItem("bj-credit", 3);
     localStorage.setItem("bj-round", 0);
-
     showHighScores();
 }
 
+// Function which displays High Scores
 function showHighScores() {
     scoresWindow.style.display = "block";
     scoresList.innerHTML =
@@ -237,17 +236,21 @@ function showHighScores() {
     }).join('');
 }
 
+// Function which hides High Scores
 function hideScores() {
     scoresWindow.style.display = "none";
 }
 
 // Function which clears High Scores
 function clearScores() {
-    localStorage.clear("highScores");
+    localStorage.removeItem("highScores");
     location.reload(false);
 }
 
 // Reset function
 function restartGame() {
+    blackjackEl.style.display = "none";
+    bustedEl.style.display = "none";
+    gameOverEl.style.display = "none";
     location.reload(true);
 }
