@@ -493,34 +493,43 @@ button {
             High Scores 
 --------------------------------------*/
 #scores-wraper {
-
     display:none ;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 40px -20px 0 10%;
+    margin: 40px 0 0 10%;
     min-height: 500px;
     width: 80%;
     background-image: url(../images/scores.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
-    
     color: var(--bg-dark-green);
     border: 1px solid #013200;
-    border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
     box-shadow: 2px 1px 5px var(--shadow-box);
+    animation: 0.5s forwards slide-in-efect;
 }
 
+@keyframes slide-in-efect {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: sclale(100%);
+    }
+  }
 
 #scores-bg-wraper {
     min-height: 500px;
     width: 90%;
-    margin: 2% -3% -3% 2%;
-    padding: 5%;
+    margin: 2% 0 -3% 2%;
+    padding: 5% 25px 5% 5%;
     background-color: var(--off-white);
     border: 1px solid #013200;
-    border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
     box-shadow: 2px 1px 5px var(--shadow-box);
     opacity: 0.7;
     grid-column: 1 / span 3;
@@ -532,6 +541,7 @@ button {
     color: gold;
     text-transform: uppercase;
 }
+
 #scores-bg-wraper ol{
     font-size: 1.3rem;
 }
@@ -542,7 +552,6 @@ button {
 
 ------------------- */
 @media screen and (max-width: 460px) {
-
     body {
         font-size: 90%;
     }
@@ -592,15 +601,6 @@ button {
         margin: 25px 0 0 0;
     }
     
-    /* @keyframes slide-in-efect {
-        0% {
-          transform: scale(0);
-        }
-        100% {
-          transform: sclale(100%);
-        }
-      } */
-
     #social-media-container {
         position: fixed;
         bottom: 0;
@@ -651,6 +651,7 @@ button {
         padding-top: 20px;
         font-size: 150%;
     }
+
     #media-links li {
         display: inline;
         font-size: 140%;
@@ -664,8 +665,8 @@ button {
         text-align: left;
         transform: scale(1);
         transition: all 1000ms;
-        
     }
+
     #media-links i {
         color: var(--gold);
         padding: 0 20px;
@@ -740,30 +741,80 @@ button {
     }
 
     #scores-wraper {
+        display:none ;
+        position: absolute;
         top: 0;
         right: 0;
-        margin: 40px -40px 0 0;
+        margin: 40px 0 0 10%;
+        min-height: 500px;
+        width: 80%;
+        background-image: url(../images/scores.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        color: var(--bg-dark-green);
+        border: 1px solid #013200;
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+        box-shadow: 2px 1px 5px var(--shadow-box);
+        animation: 0.5s forwards slide-in-efect;
+    }
+    
+    @keyframes slide-in-efect {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: sclale(100%);
+        }
+      }
+    
+    #scores-bg-wraper {
+        min-height: 500px;
+        width: 90%;
+        margin: 2% 0 -3% 2%;
+        padding: 5% 25px 5% 5%;
+        background-color: var(--off-white);
+        border: 1px solid #013200;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        box-shadow: 2px 1px 5px var(--shadow-box);
+        opacity: 0.7;
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 3;
+        text-align: left;
+    }
+
+    #scores-wraper {
+        top: 0;
+        right: 0;
+        margin: 40px 0 0 10%;
         min-height: 600px;
         width: 105%;
     }
 
     #scores-bg-wraper {
         min-height: 600px;
+        margin: 2% 0 -3% 2%;
     }
 
     #scores-bg-wraper h2{
         margin-top: 0;
         padding-top: 20px;
-
     }
 
     #scores-bg-wraper ol{
         font-size: 0.8rem;
     }
 
+    #bttn-start,
+    #bttn-hit,
+    #bttn-stay,
+    #bttn-reset,
     #bttn-save-score,
     #bttn-back-to-welcome,
-    #bttn-clear-score{
+    #bttn-clear-score,
+    #bttn-high-scores{
         width: 100%;
         margin: 2%;
     }

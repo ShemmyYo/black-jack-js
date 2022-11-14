@@ -10,76 +10,84 @@
         rel="stylesheet">
     <title>Blackjack</title>
 </head>
-<!-- =============== GAME MANU Starts here =============== -->
-<div id="media-container">
-    <ul id="media-links">
-        <li><a href="index.html"><i class="fa-solid fa-house-user"></i></a></li>
-        <li><a href="#" onclick="hideScores()"><i class="fa-solid fa-gamepad"></i></a></li>
-        <li><a href="#" onclick="showHighScores()"><i class="fa-solid fa-star"></i></a></li>
-    </ul>
-</div>
-<!-- =============== GAME MENU Ends here =============== -->
-<!-- =============== GAME BOX Starts here =============== -->
-<div id="game-wrap">
-    <div id="game-box">
-        <!-- =============== GAME SCORES Start here =============== -->
-        <div id="scores-box">
-            <p id="player-sum">Total: 0</p>
-            <p id="credit-el">Credit:</p>
-            <p id="round-el">Round:</p>
-        </div>
-        <!-- =============== GAME SCORES End here =============== -->
+<main>
+    <!-- =============== GAME MANU Starts here =============== -->
+    <div id="media-container">
+        <ul id="media-links">
+            <li><a href="index.html"><i class="fa-solid fa-house-user"></i></a></li>
+            <li><a href="#" onclick="hideScores()"><i class="fa-solid fa-gamepad"></i></a></li>
+            <li><a href="#" onclick="showHighScores()"><i class="fa-solid fa-star"></i></a></li>
+        </ul>
+    </div>
+    <!-- =============== GAME MENU Ends here =============== -->
+    <!-- =============== GAME BOX Starts here =============== -->
+    <div id="game-wrap">
+        <div id="game-box">
+            <!-- =============== GAME SCORES Start here =============== -->
+            <div id="scores-box">
+                <p id="player-sum">Total: 0</p>
+                <p id="credit-el">Credit:</p>
+                <p id="round-el">Round:</p>
+            </div>
+            <!-- =============== GAME SCORES End here =============== -->
 
-        <div id="game-box-cards">
-            <!-- Dealer's Cards & Sum start here-->
-            <div id="inner-game-box-cards-dealer">
-                <h2 id="dealer-name-h2">Dealer<span id="dealer-sum">:</span></h2>
-                <div id="dealer-cards">
-                    <img id="hidden" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
-                    <img id="cards-at-start1" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
+            <div id="game-box-cards">
+                <!-- Dealer's Cards & Sum start here-->
+                <div id="inner-game-box-cards-dealer">
+                    <h2 id="dealer-name-h2">Dealer<span id="dealer-sum">:</span></h2>
+                    <div id="dealer-cards">
+                        <img id="hidden" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
+                        <img id="cards-at-start1" class="cards" src="./assets/images/deck/back.png"
+                            alt="back of a playing card">
+                    </div>
+                </div>
+                <!-- =============== Dealer's Cards & Sum end here =============== -->
+                <!-- =============== Messages box starts here =============== -->
+            </div>
+            <div id="inner-game-box-msg">
+                <h1 id="blackjack-el">Blackjack</h1>
+                <h1 id="busted-el">Busted!</h1>
+                <h1 id="game-over-el">Game Over!</h1>
+                <p id="message-el">Want to play a round?</p>
+            </div>
+            <!-- =============== Messages box ends here =============== -->
+            <!-- =============== Players's Cards & Sum start here ===============-->
+            <div id="inner-game-box-cards-player">
+                <div>
+                    <h2 id="player-name-h2">You: </h2>
+                </div>
+                <div id="player-cards">
+                    <img id="cards-at-start2" class="cards" src="./assets/images/deck/back.png"
+                        alt="back of a playing card">
+                    <img id="cards-at-start3" class="cards" src="./assets/images/deck/back.png"
+                        alt="back of a playing card">
                 </div>
             </div>
-            <!-- =============== Dealer's Cards & Sum end here =============== -->
-            <!-- =============== Messages box starts here =============== -->
         </div>
-        <div id="inner-game-box-msg">
-            <h1 id="blackjack-el">Blackjack</h1>
-            <h1 id="busted-el">Busted!</h1>
-            <h1 id="game-over-el">Game Over!</h1>
-            <p id="message-el">Want to play a round?</p>
+        <!-- =============== Players's Cards & Sum end here =============== -->
+        <div id="bttn-wrapper">
+            <button class="button" id="bttn-hit" onclick="hit()">Hit!</button>
+            <button class="button" id="bttn-stay" onclick="stay()">Stay</button>
+            <button class="button" id="bttn-start">Start New Game</button>
+            <button class="button" id="bttn-reset" onclick="restartGame()">Reset Game</button>
+            <button class="button" id="bttn-high-scores" onclick="showHighScores()">High Scores</button>
         </div>
-        <!-- =============== Messages box ends here =============== -->
-        <!-- =============== Players's Cards & Sum start here ===============-->
-        <div id="inner-game-box-cards-player">
-            <div>
-                <h2 id="player-name-h2">You: </h2>
-            </div>
-            <div id="player-cards">
-                <img id="cards-at-start2" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
-                <img id="cards-at-start3" class="cards" src="./assets/images/deck/back.png" alt="back of a playing card">
-            </div>
+        <!-- =============== GAME BOX Ends here =============== -->
+    </div>
+    <!-- =============== High Scores BOARD Starts here =============== -->
+    <div id="scores-wraper">
+        <div id="scores-bg-wraper">
+            <h2>High Scores</h2>
+            <ol id="scores-list-style"></ol>
+            <a href="index.html"><button id="bttn-back-to-welcome" class="button" onclick="">Reset<br>Game</button></a>
+            <button id="bttn-clear-score" class="button" onclick="clearScores()">Clear<br>High Scores</button>
+            <button id="bttn-hide-scores" class="button" onclick="hideScores()">Close<br>High Scores</button>
         </div>
     </div>
-    <!-- =============== Players's Cards & Sum end here =============== -->
-    <div id="bttn-wrapper">
-        <button class="button" id="bttn-hit" onclick="hit()">Hit!</button>
-        <button class="button" id="bttn-stay" onclick="stay()">Stay</button>
-        <button class="button" id="bttn-start">Start New Game</button>
-        <button class="button" id="bttn-reset" onclick="restartGame()">Reset Game</button>
-    </div>
-    <!-- =============== GAME BOX Ends here =============== -->
-</div>
-<!-- =============== High Scores BOARD Starts here =============== -->
-<div id="scores-wraper">
-    <div id="scores-bg-wraper">
-        <h2>High Scores</h2>
-        <ol id="scores-list-style"></ol>
-        <a href="index.html"><button id="bttn-back-to-welcome" class="button" onclick="">Reset Game</button></a>
-        <button id="bttn-clear-score" class="button" onclick="clearScores()">Clear High Scores</button>
-    </div>
-</div>
+</main>
 <!-- =============== High Scores BOARD Ends here =============== -->
-<footer id="footer-wrapper">  <div id="copyright-container">
+<footer id="footer-wrapper">
+    <div id="copyright-container">
         <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
             aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text">2022 ShemmyYo -
             Project developed for Educational purposes</a>

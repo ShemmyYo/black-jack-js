@@ -21,6 +21,7 @@ let bttnStay = document.getElementById("bttn-stay");
 let bttnHit = document.getElementById("bttn-hit");
 let bttnStart = document.getElementById("bttn-start");
 let bttnReset = document.getElementById("bttn-reset");
+let bttnHighScores = document.getElementById("bttn-high-scores");
 
 // High Scores Elements
 let startGameAgainBtn = document.getElementById("startGameAgain");
@@ -101,6 +102,7 @@ function firstGame() {
     bttnHit.style.display = "inline";
     bttnStay.style.display = "inline";
     bttnReset.style.display = "none";
+    bttnHighScores.style.display = "none";  
     hidden = cardsDeck.pop();
     dealerSum += getValue(hidden);
     console.log("hidden: " + hidden);
@@ -224,7 +226,7 @@ function saveHighScore(){
     localStorage.setItem('highScores', JSON.stringify(highScores)); 
     localStorage.setItem("bj-credit", 3);
     localStorage.setItem("bj-round", 0);
-    showHighScores();
+    bttnHighScores.display.style = "block";    
 }
 
 // Function which displays High Scores
