@@ -10,7 +10,8 @@ This project is my take on this timeless game and the aim of this project is to 
 Link: https://shemmyyo.github.io/black-jack-js/
 
 
-![Multi Device Demo](https://ui.dev/amiresponsive?url=https://shemmyyo.github.io/black-jack-js/)
+![Multi Device Information Demo](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/am-i-responsive-black.png)
+![Multi Device Game Demo](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/am-i-responsive-black-game.png)
 
 ## __Live Web-Page__
 [Blackjack](https://shemmyyo.github.io/black-jack-js/)
@@ -22,7 +23,7 @@ Link: https://shemmyyo.github.io/black-jack-js/
 
 <img height="42" src="assets/other/html.png"> __HTML5__
 <img height="50" src="assets/other/css-img.png"> __CSS3__
-<img height="45" src="assets/other/js.png"> __JavaScript__
+<img height="45" src="assets/other/js.jpg"> __JavaScript__
 <img height="50" src="assets/other/gitpod.png"> __Gitpod__
 <img height="45" src="assets/other/github.png"> __Git__
 
@@ -58,3 +59,69 @@ Link: https://shemmyyo.github.io/black-jack-js/
 - [Acknowledgements](#acknowledgements)
 
 ***
+
+## __Project Goals__
+
+## __Brief__
+
+***
+
+## __UX User Experience__
+
+### __User Stories__
+
+### __Wireframes__
+Before writing any HTML or CSS, I used Eagle to gather ideas and Balsamiq to create wireframes.
+
+Home Page:
+
+![Home Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-wf.pdf)
+
+Game Page:
+
+![Game Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-wf.pdf)
+
+Game with High Scores Page:
+
+![High Scores Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-scores-wf.pdf)
+
+#### __Tablet__ 
+
+![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+#### __Desktop Design__ 
+
+![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+***
+
+### __Site Structure__
+
+Blackjack 2 page website. 
+
+The home page is the default loading page which gaves the Player instructions as well is serving as logging in page (JS). 
+
+### __Colour Scheme__
+
+I used <img height="12" src=""> [Colormind](http://colormind.io/bootstrap/) to find a perfect colour scheme that would tie-in with the nature of the page, be easily readable and visually appealing to users.
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+### __Typography__
+
+The three fonts used were imported into the css from [Google Fonts](https://fonts.google.com/)
+
+
+I used 'XXX' for logo, 'XXX' for all headings & any other text.
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+
+
+Sans-serif is the nominated fallback font
+
+### __Imagery__
