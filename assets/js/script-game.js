@@ -1,44 +1,42 @@
 // GAME Page DOM Elements
-let dealerSumEl = document.getElementById("dealer-sum");
-let dealerNameEl = document.getElementById("dealer-name-h2");
-let playerNameEl = document.getElementById("player-name-h2");
+const dealerSumEl = document.getElementById("dealer-sum");
+const dealerNameEl = document.getElementById("dealer-name-h2");
+const playerNameEl = document.getElementById("player-name-h2");
 
 // GAME messages Elements
-let cardsAtStart1 = document.getElementById("cards-at-start1");
-let cardsAtStart2 = document.getElementById("cards-at-start2");
-let cardsAtStart3 = document.getElementById("cards-at-start3");
-let messageBox = document.getElementById("inner-game-box-msg");
-let blackjackEl = document.getElementById("blackjack-el");
-let bustedEl = document.getElementById("busted-el");
-let gameOverEl = document.getElementById("game-over-el");
-let messageEl = document.getElementById("message-el");
+const cardsAtStart1 = document.getElementById("cards-at-start1");
+const cardsAtStart2 = document.getElementById("cards-at-start2");
+const cardsAtStart3 = document.getElementById("cards-at-start3");
+const messageBox = document.getElementById("inner-game-box-msg");
+const blackjackEl = document.getElementById("blackjack-el");
+const bustedEl = document.getElementById("busted-el");
+const gameOverEl = document.getElementById("game-over-el");
+const messageEl = document.getElementById("message-el");
 let totalEl = document.getElementById("player-sum");
 let creditEl = document.getElementById("credit-el");
 let roundEl = document.getElementById("round-el");
 
 //GAME buttons Elements
-let bttnStay = document.getElementById("bttn-stay");
-let bttnHit = document.getElementById("bttn-hit");
-let bttnStart = document.getElementById("bttn-start");
-let bttnReset = document.getElementById("bttn-reset");
-let bttnHighScores = document.getElementById("bttn-high-scores");
+const bttnStay = document.getElementById("bttn-stay");
+const bttnHit = document.getElementById("bttn-hit");
+const bttnStart = document.getElementById("bttn-start");
+const bttnReset = document.getElementById("bttn-reset");
+const bttnHighScores = document.getElementById("bttn-high-scores");
 
 // High Scores Elements
-let startGameAgainBtn = document.getElementById("startGameAgain");
-let scoresBgWraper = document.getElementById("scores-bg-wraper");
-let scoresList = document.getElementById("scores-list-style");
+const startGameAgainBtn = document.getElementById("startGameAgain");
+const scoresBgWraper = document.getElementById("scores-bg-wraper");
+const scoresList = document.getElementById("scores-list-style");
 let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // High Scores Buttons
-let bttnSave = document.getElementById("bttn-save-score");
-let bttnClearScores = document.getElementById("bttn-clear-score");
-let scoresWindow = document.getElementById("scores-wraper");
+const bttnSave = document.getElementById("bttn-save-score");
+const bttnClearScores = document.getElementById("bttn-clear-score");
+const scoresWindow = document.getElementById("scores-wraper");
 
 //sounds
-let shuffleSound = new Audio('assets/sounds/sfx-shuffling-cards.mp3');
-let defeatSound = new Audio('assets/sounds/sfx-defeat.mp3');
-let victorySound = new Audio('assets/sounds/sfx-victory.mp3');
-let bustedSound = new Audio('assets/sounds/sfx-busted.mp3');
+const defeatSound = new Audio('assets/sounds/sfx-defeat.mp3');
+const victorySound = new Audio('assets/sounds/sfx-victory.mp3');
 
 // Variables
 let cards;
@@ -56,23 +54,22 @@ let message = "";
 
 // Onload procedure 
 window.onload = function() {
-    console.log("game window onload");
     playerNameEl.innerHTML = localStorage.getItem("bj-playerName") + ":";
     creditEl.innerHTML = "Credit: " + localStorage.getItem("bj-credit");
     roundEl.innerHTML = "Round :" + localStorage.getItem("bj-round");
-    messageEl.innerHTML = "Do you want to play a round? <br><br><b>>>> START NEW GAME <<<</b>";
+    messageEl.innerHTML = "Do you want to play a round? <br><br><b><div class='msg-bttn' onclick='startFirstGame()'>>>> START NEW GAME <<<</div></b>";
     round +=1;
     roundEl.innerHTML = "Round: " + round;
 };
 
 // Bttn START procedure
-    bttnStart.addEventListener("click", function startFirstGame() {
-    console.log("fisrt start");
-    messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br><b>>>> Hit! <<<</b><br><b>>>> STAY <<<</b><br><br>Are you feeling lucky???";
+bttnStart.addEventListener("click", startFirstGame);
+function startFirstGame() {
+    messageEl.innerHTML = "so what will you do now? " + localStorage.getItem("bj-playerName") + "!<br><br><b><div class='msg-bttn' onclick='hit()'>>>> Hit! <<<</div></b><br><b><div class='msg-bttn' onclick='stay()'>>>> STAY <<<</div></b><br>Are you feeling lucky???";
     createDeck();
     shuffleDeck();
     firstGame();
-});
+};
 
 // Function creating deck of cards 
 function createDeck() {
@@ -85,19 +82,16 @@ function createDeck() {
             cardsDeck.push(ranks[rank] + "-" + colors[color]);
         }
     }
-    console.log(cardsDeck);
 }
 
 // Function shuffling deck of cards before randow card draw
 function shuffleDeck() {
-    shuffleSound.play();
     for (let i = 0; i < 52; i++) {
         let j = Math.floor(Math.random() * 52);
         let temp = cardsDeck[i];
         cardsDeck[i] = cardsDeck[j];
         cardsDeck[j] = temp;
         }
-    console.log(cardsDeck);
 }
 
 // Function witch renders cards for Player and Dealer (incl. hidden dealer card) 
@@ -112,8 +106,6 @@ function firstGame() {
     bttnHighScores.style.display = "none";  
     hidden = cardsDeck.pop();
     dealerSum += getValue(hidden);
-    console.log("hidden: " + hidden);
-    // console.log(dealerSum);
     while (dealerSum < 17) {
         let cardImg = document.createElement("img");
         let card = cardsDeck.pop();
@@ -122,7 +114,6 @@ function firstGame() {
         dealerSum += getValue(card);
         document.getElementById("dealer-cards").append(cardImg);
     }
-    console.log("D: " + dealerSum);
     for (let i = 0; i < 2; i++) {
         let cardImg = document.createElement("img");
         let card = cardsDeck.pop();
@@ -131,7 +122,6 @@ function firstGame() {
         playerSum += getValue(card);
         document.getElementById("player-cards").append(cardImg);
     }
-    console.log("P " + playerSum);
     totalEl.innerHTML = "Total: " + playerSum;
     creditEl.innerHTML = "Credit: " + credit;
     if (playerSum === 21) {
@@ -150,6 +140,7 @@ function hit() {
         message = "Do you want to draw another card?";
     } else if (playerSum === 21) {
         message = "Congratulations!!! You've got a Blackjack!";
+        stay()
     } else {
         message = "";
         totalEl.innerHTML = "Total: " + playerSum;
@@ -173,7 +164,6 @@ function stay() {
         credit -= 1;
         message = "Round: " + round +" - You Lose!<br><br>Credit -1";
         bustedEl.style.display = "flex";
-        bustedSound.play();
     } else if (dealerSum > 21) {
         credit += 2;
         message = "Round: " + round +" - You (not quite...) Win? " + localStorage.getItem("bj-playerName") + "!<br><br>Your Credit has not changed and is " + credit;
@@ -205,7 +195,7 @@ function getValue(card) {
     return parseInt(value);
 }
 
-// Function that checks if Credit availbale for the Player to continue the game
+// Function that checks if Credit is availbale for the Player to continue the game
 function beforeRestart() {
     bttnHit.style.display = "none";
     bttnStay.style.display = "none";
@@ -241,7 +231,7 @@ function saveHighScore(){
     bttnHighScores.display.style = "block";    
 }
 
-// Function which displays High Scores
+// Function which opens side box and displays High Scores
 function showHighScores() {
     scoresWindow.style.display = "block";
     scoresList.innerHTML =
@@ -250,18 +240,15 @@ function showHighScores() {
     }).join('');
 }
 
-// Function which hides High Scores
 function hideScores() {
     scoresWindow.style.display = "none";
 }
 
-// Function which clears High Scores
 function clearScores() {
     localStorage.removeItem("highScores");
     location.reload(false);
 }
 
-// Reset function
 function restartGame() {
     blackjackEl.style.display = "none";
     bustedEl.style.display = "none";

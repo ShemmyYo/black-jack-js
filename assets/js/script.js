@@ -1,21 +1,23 @@
 // WELCOME Page DOM Elements
-let loginInputPlayerEl = document.getElementById("input-player-name");
-let loginBttnSaveNewPlayerEl = document.getElementById("bttn-save-player-name");
-let loginMsgBoxEl = document.getElementById("enter-game-msg");
-let loginBttnChangePlayerEl = document.getElementById("change-player");
-let loginNewPlayerBoxEl = document.getElementById("player-new-name-empty");
-let loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
+const loginInputPlayerEl = document.getElementById("input-player-name");
+const loginBttnSaveNewPlayerEl = document.getElementById("bttn-save-player-name");
+const loginMsgBoxEl = document.getElementById("enter-game-msg");
+const loginBttnChangePlayerEl = document.getElementById("change-player");
+const loginNewPlayerBoxEl = document.getElementById("player-new-name-empty");
+const loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
+
+//sounds
+const shuffleSound = new Audio('assets/sounds/sfx-shuffling-cards.mp3');
 
 // On Load 
 window.onload = function() {
-    console.log("welcome window onload");
+    shuffleSound.play();
     validatePlayer();
 };
 
 //Function validating user existance 
 function validatePlayer() {
     if (localStorage.getItem("bj-playerName")) {
-        console.log("user exists");
         loginMsgBoxEl.style.display = "block";
         loginMsgBoxEl.innerHTML = "Welcome back! " + localStorage.getItem("bj-playerName");
         loginNewPlayerBoxEl.style.display = "none";
@@ -39,7 +41,6 @@ loginBttnChangePlayerEl.addEventListener("click", function remPlayer(){
 
 // Function adding new Player and setting up credits to 3 and rounds to 0
 loginBttnSaveNewPlayerEl.addEventListener("click", function addPlayer(){
-    console.log("add user");
     if (!loginInputPlayerEl.value) {
         alert("Enter and save Your name Player! ");
     } else {
