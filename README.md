@@ -135,14 +135,46 @@ The content images on Gallery Page are aligned in neat symmetrical grids for opt
 
 #### __Home__
 
-- __Home page is designed to be fully responsive. it serves two purpouses: 
-    1. Welcome screen - HTML, CSS and JS code checking/adding new Player.
-    2. Game Rules - HTML and CSS__
+- __Home page is designed to be fully responsive. it serves two purpouses:__
+    - Welcome screen - HTML, CSS and JS code checking/adding new Player.
+    - Game Rules - HTML and CSS
 
 
 Mobile first:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-login-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/workspace/black-jack-js/assets/other/welcome-mobile-screen.png)
+
+
+Large display:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-login-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/workspace/black-jack-js/assets/other/welcome-screen.png)
+
+
 ***
-##### __Navigational Bar__ - Large display:
+#### __Game Page__ 
+- __fetures __
+- __fetures __
+- __fetures __
+- __fetures __
+
+
+Mobile first:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-busted-mobile-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-mobile-screen.png)
+
+
+Large display:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-screen.png) 
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-busted-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-screen.png) 
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-screen.png)
+
+
+***
