@@ -72,6 +72,7 @@ Link: https://shemmyyo.github.io/black-jack-js/
 
 ### __Wireframes__
 Before writing any HTML or CSS, I used Eagle to gather ideas and Balsamiq to create wireframes.
+Once completed, my wireframes were exported to pdf and coverted to png files with 
 
 Home Page:
 
@@ -87,11 +88,11 @@ Game with High Scores Page:
 
 #### __Tablet__ 
 
-![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/)
+![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-tablet-wf.jpg)
 
 #### __Desktop Design__ 
 
-![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/welcome-wf.jpg)
+![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-wf.jpg)
 
 ***
 
@@ -104,25 +105,44 @@ Game page is where the JS magic happens and DOM is modiied - one page lets the u
 
 ### __Colour Scheme__
 
-I used <img height="12" src="https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind-logo.png"> [Colormind](http://colormind.io/) to find a perfect colour scheme that would tie-in with the nature of the page, be easily readable and visually appealing to users.
+I used <img height="12" src="https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind-logo.png"> [Colormind](http://colormind.io/) to find a perfect colour scheme that would tie-in with the classic feel of the page, be easily readable and visually appealing to users.
 
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind.png)
 
 ### __Typography__
 
-The three fonts used were imported into the css from [Google Fonts](https://fonts.google.com/)
+The two fonts used were imported into the css from [Google Fonts](https://fonts.google.com/)
 
+I used 'Luckest Guy' for logo, 'Syncopate' for all headings & any other text.
 
-I used 'XXX' for logo, 'XXX' for all headings & any other text.
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/google-font-luckiest-guy.png)
 
-
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
-
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
-
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
-
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/google-font-syncopate.png)
 
 Sans-serif is the nominated fallback font
 
 ### __Imagery__
+
+The images have been compressed in [compressor.io](https://compressor.io/) to enable faster loading times. 
+
+The content images on Gallery Page are aligned in neat symmetrical grids for optimal viewing and user experience. 
+
+***
+
+## __Features__
+
+### __Existing Features__
+
+#### __Home__
+
+- __Home page is designed to be fully responsive. it serves two purpouses: 
+    1. Welcome screen - HTML, CSS and JS code checking/adding new Player.
+    2. Game Rules - HTML and CSS__
+
+
+Mobile first:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+***
+##### __Navigational Bar__ - Large display:

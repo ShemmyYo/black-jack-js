@@ -451,12 +451,13 @@ button {
         Social Media Container  
 
 -------------------------------- */
+#social-links-scores,
 #social-links {
     position:fixed;
-    bottom: 25px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 35px;
+    height: 55px;
     padding: 1px 5% 25px 5%;
     text-align: left;
     background-color: rgba(11, 141, 54, 0.5);
@@ -466,17 +467,24 @@ button {
     transition: all 2s linear;
 }
 
+#social-links-scores {
+    background-color: rgba(11, 141, 54, 0);
+}
+
+#social-links-scores li,
 #social-links li {
     display: inline;
     font-size: 170%;
     align-items: center;
 }
 
+#social-links-scores i,
 #social-links i {
     color: var(--bg-dark-green);
-    padding: 10px;
+    padding: 15px;
 }
 
+#social-links-scores i:hover,
 #social-links i:hover {
     color: var(--gold);
     transform: scale(1.4);
@@ -652,6 +660,7 @@ button {
         border-bottom-right-radius: 48px;
     }
 
+    #social-links-scores,
     #social-links {
         position: fixed;
         bottom: 15px;
@@ -673,6 +682,7 @@ button {
         
     }
 
+    #social-links-scores li:first-child,
     #social-links li:first-child {
         margin: 0;
         padding: 20px 20px 0 20px ;
@@ -685,6 +695,7 @@ button {
         align-items: center;
     }
 
+    #social-links-scores i,
     #social-links i {
         color: var(--bg-dark-green);
         padding: 5px 2% 5px 0;
@@ -797,6 +808,7 @@ button {
       }
     
     #scores-bg-wraper {
+        position: relative;
         min-height: 500px;
         width: 90%;
         margin: 2% 0 -3% 2%;
@@ -815,9 +827,9 @@ button {
     #scores-wraper {
         top: 0;
         right: 0;
-        margin: 40px 0 0 10%;
+        margin: 40px 0 -50px 10%;
         min-height: 600px;
-        width: 105%;
+        width: 100%;
     }
 
     #scores-bg-wraper {
