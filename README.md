@@ -177,8 +177,7 @@ The Player can also open the High-scores screen from the Game page through the '
 Mobile first:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-mobile-screen.png) 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-busted-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-mobile-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-3-mobile-screen.png) 
 
 
 Large display:
@@ -193,6 +192,7 @@ Large display:
 ***
 #### __Totals & High Scores Screen__ 
 
+- Throughout the game, the Player is being presented with total sum of his/hers cards on hand, credit and number of rounds played.
 - Once the game is over (when Player runs out of credit), his/hers score is then saved to 'High Scores' table and presented back. 
 
 
@@ -200,14 +200,14 @@ Large display:
 Mobile first:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-info-mobile-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-info-mobile-screen.png)
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-scores-mobile-screen.png)
 
 
 Large display:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-info-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-info-screen.png)
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-scores-screen.png)
 
 
@@ -231,5 +231,17 @@ Large display:
 - [Favicon](https://favicon.io/) - to make icon
 - [ILovePDF](https://www.ilovepdf.com/) - to convers fireframes from pdf to png
 - [COMPRESSOR](https://compressor.io/) - to compress images 
+
+***
+
+## __Testing__
+
+- HTML [Markup Validator](https://validator.w3.org/) by The World Wide Web Consortium [W3C](https://www.w3.org/)
+
+![index.html](https://github.com/ShemmyYo) __index.html__
+***
+![game.html](https://github.com/ShemmyYo/) __game.html__
+***
+
 
 ***
