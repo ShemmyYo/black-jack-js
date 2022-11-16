@@ -265,3 +265,109 @@ Large display:
 
 ![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/js-test-game.png) __results for Game Page__
 
+***
+
+- Tests based on user stories:
+
+
+
+
+
+
+
+
+
+***
+
+- Responsive tests were carried out manually using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/). 
+The site loaded and ran smoothly on all devices and content adjusted as expected for each screen size.
+
+    Devices tested:
+    - min. width of 320px
+    - media breakpoint at 460px
+    - Samsung Galaxy S8, S20 Ultra
+    - Iphone SE, XR, 12pro
+    - Pixel 5
+    - Ipad Air & Mini
+    - Surface pro 7 & duo
+    - Nest Hub & Hub Max
+
+***
+
+- Browser Compatibility
+
+After publishing the site through Github pages, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
+The site has loaded perfectly and had no issues across all browsers.
+
+
+***
+
+## __Deployment__
+
+The site was deployed to GitHub __[link](https://github.com/ShemmyYo/black-jack-js)__
+
+### __Deploy to GitHub Pages__
+
+1. Navigate to the settings tab in the GitHub repository 
+2. Once in settings, navigate to the pages tab on the left of the page 
+3. From the source section drop-down menu, select the Main Branch, then click "Save".
+4. page will no automatically refresh and show a detailed ribbon display to indicate successful deployment 
+
+### __Local Deployment__
+
+To make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
+
+- `git clone https://github.com/shemmyyo/black-jack-js.git`
+
+### __To Fork the Repository__ 
+
+To make a copy or ‘fork’ the repository - 
+
+1. Log into GitHub and locate repository 
+2. On the right hand side of the page select the ‘fork’ option to create and copy of the original
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository
+
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/ShemmyYo/black-jack-js)
+
+***
+
+## __Credits__
+
+### __Code__
+
+-
+-
+-
+-
+
+Throughout the building process I found many helpful tutorials online.
+
+I sometimes applied principles within them to the site, after fully understanding their code and modifying to fit the site's needs.
+
+### __Design__
+
+- Design files incl. content, references and images were collected and organised with [Eagle](https://en.eagle.cool/)
+- Wireframes were made using [Balsamiq](https://balsamiq.com/)
+- Colour scheme was chosen with <img height="12" src="https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind-logo.png"> [Colormind](http://colormind.io)
+- Gradient backgrounds were generated with [CSS Gradient](https://cssgradient.io/) - happy little website and free tool that lets you create a gradient background
+- The two fonts used across the site were imported from [Google Fonts](https://fonts.google.com/)
+
+### __Content__
+
+- 
+
+### __Media__
+
+- All photos used on throughout the site are from and used under the [stock.adobe.com](https://stock.adobe.com/) license
+- Favincon made with Favicon.io
+
+## __Acknowledgements__ 
+
+This website was executed and completed as a Portfolio 2 Project for the Full Stack Software Developer Diploma at [Code Institute](https://codeinstitute.net/)
+
+
+Big thank you to [Harry Dhillon](https://github.com/Harry-Leepz), my mentor who provided me with guide and excellent feedback throughout the project
+
+Shemmy, 2022
