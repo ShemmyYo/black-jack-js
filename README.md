@@ -217,7 +217,7 @@ Large display:
 
 - [HTML5](https://html.spec.whatwg.org/) - provides content and structure 
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides styling 
-- [JS] (https://www.w3.org/standards/webdesign/script) - adds functionality to the game.
+- [JS](https://www.w3.org/standards/webdesign/script) - adds functionality to the game.
 - [Balsamiq](https://balsamiq.com/) - for wireframes
 - [Eagle](https://en.eagle.cool/) - to collect, search and organize your design files in a logical way and all in one place
 - [Font Awesome](https://fontawesome.com/) - multiple icons implemented throughout the site from font awesome version 5
@@ -247,23 +247,23 @@ Large display:
 
 - CSS Validator [Jigsaw](https://jigsaw.w3.org/css-validator/) by The World Wide Web Consortium [W3C](https://www.w3.org/)
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/css-check-index.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/css-check-index.png)
 
 ***
 
 - Lighthouse feature in Google Chrome's Developer Tools
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-index-laptop.png) __results for Index Page__
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/lighthouse-index-laptop.png) __results for Index Page__
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-game-laptop.png) __results for Game Page__
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/lighthouse-game-laptop.png) __results for Game Page__
 
 ***
 
 - JSHint Tools [JSHint](https://jshint.com/)
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/js-test-index.png) __results for Index Page__
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/js-test-index.png) __results for Index Page__
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/js-test-game.png) __results for Game Page__
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/js-test-game.png) __results for Game Page__
 
 ***
 
