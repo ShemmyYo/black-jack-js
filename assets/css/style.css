@@ -1,8 +1,9 @@
 :root {
-    --off-white: rgb(245, 245, 245);
-    --gold: rgb(218, 164, 32);
+    --gold: #daa420;
+    --off-white: #f5f5f5;
+    --bg-green-accent: #066700;
     --bg-dark-green: #011b00;
-    --shadow-box: rgb(1, 50, 0);
+    --shadow-box: #165435;
 }
 
 body {

@@ -23,7 +23,7 @@ Link: https://shemmyyo.github.io/black-jack-js/
 
 <img height="42" src="assets/other/html.png"> __HTML5__
 <img height="50" src="assets/other/css-img.png"> __CSS3__
-<img height="45" src="assets/other/js.jpg"> __JavaScript__
+<img height="45" src="assets/other/js.png"> __JavaScript__
 <img height="50" src="assets/other/gitpod.png"> __Gitpod__
 <img height="45" src="assets/other/github.png"> __Git__
 
@@ -75,23 +75,23 @@ Before writing any HTML or CSS, I used Eagle to gather ideas and Balsamiq to cre
 
 Home Page:
 
-![Home Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-wf.pdf)
+![Home Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/welcome-wf.jpg)
 
 Game Page:
 
-![Game Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-wf.pdf)
+![Game Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-wf.jpg)
 
 Game with High Scores Page:
 
-![High Scores Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-scores-wf.pdf)
+![High Scores Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-scores-wf.jpg)
 
 #### __Tablet__ 
 
-![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/)
 
 #### __Desktop Design__ 
 
-![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/welcome-wf.jpg)
 
 ***
 
@@ -100,12 +100,13 @@ Game with High Scores Page:
 Blackjack 2 page website. 
 
 The home page is the default loading page which gaves the Player instructions as well is serving as logging in page (JS). 
+Game page is where the JS magic happens and DOM is modiied - one page lets the user initiate and control actions, and gives feedback.
 
 ### __Colour Scheme__
 
-I used <img height="12" src=""> [Colormind](http://colormind.io/bootstrap/) to find a perfect colour scheme that would tie-in with the nature of the page, be easily readable and visually appealing to users.
+I used <img height="12" src="https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind-logo.png"> [Colormind](http://colormind.io/) to find a perfect colour scheme that would tie-in with the nature of the page, be easily readable and visually appealing to users.
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind.png)
 
 ### __Typography__
 
