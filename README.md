@@ -238,10 +238,15 @@ Large display:
 
 - HTML [Markup Validator](https://validator.w3.org/) by The World Wide Web Consortium [W3C](https://www.w3.org/)
 
-![index.html](https://github.com/ShemmyYo) __index.html__
+![index.html](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/html-check-index.png) __index.html__
 ***
-![game.html](https://github.com/ShemmyYo/) __game.html__
+![game.html](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/html-check-game.png) __game.html__
+
+
 ***
 
+- CSS Validator [Jigsaw](https://jigsaw.w3.org/css-validator/) by The World Wide Web Consortium [W3C](https://www.w3.org/)
+
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/css-validator.png)
 
 ***
