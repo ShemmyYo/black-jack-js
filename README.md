@@ -76,23 +76,23 @@ Once completed, my wireframes were exported to pdf and coverted to png files wit
 
 Home Page:
 
-![Home Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/welcome-wf.jpg)
+![Home Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/welcome-wf.png)
 
 Game Page:
 
-![Game Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-wf.jpg)
+![Game Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-wf.png)
 
 Game with High Scores Page:
 
-![High Scores Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-scores-wf.jpg)
+![High Scores Page Wireframe](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-scores-wf.png)
 
 #### __Tablet__ 
 
-![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-tablet-wf.jpg)
+![Tablet Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-tablet-wf.png)
 
 #### __Desktop Design__ 
 
-![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-wf.jpg)
+![Desktop Wireframes](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/wireframes/game-full-wf.png)
 
 ***
 
