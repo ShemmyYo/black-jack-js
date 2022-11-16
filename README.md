@@ -247,6 +247,14 @@ Large display:
 
 - CSS Validator [Jigsaw](https://jigsaw.w3.org/css-validator/) by The World Wide Web Consortium [W3C](https://www.w3.org/)
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/css-validator.png)
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/css-check-index.png)
+
+***
+
+- Lighthouse feature in Google Chrome's Developer Tools
+
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-validator-laptop.png) __results for laptop__
+
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-validator.png) __results for mobile__
 
 ***
