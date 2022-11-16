@@ -69,7 +69,7 @@ function startFirstGame() {
     createDeck();
     shuffleDeck();
     firstGame();
-};
+}
 
 // Function creating deck of cards 
 function createDeck() {
@@ -140,7 +140,7 @@ function hit() {
         message = "Do you want to draw another card?";
     } else if (playerSum === 21) {
         message = "Congratulations!!! You've got a Blackjack!";
-        stay()
+        stay();
     } else {
         message = "";
         totalEl.innerHTML = "Total: " + playerSum;

@@ -253,8 +253,15 @@ Large display:
 
 - Lighthouse feature in Google Chrome's Developer Tools
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-validator-laptop.png) __results for laptop__
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-index-laptop.png) __results for Index Page__
 
-![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-validator.png) __results for mobile__
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/lighthouse-game-laptop.png) __results for Game Page__
 
 ***
+
+- JSHint Tools [JSHint](https://jshint.com/)
+
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/js-test-index.png) __results for Index Page__
+
+![image](https://github.com/ShemmyYo/mr-and-mrs-cleaners/blob/main/assets/other/js-test-game.png) __results for Game Page__
+
