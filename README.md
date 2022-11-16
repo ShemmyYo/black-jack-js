@@ -138,34 +138,47 @@ The content images on Gallery Page are aligned in neat symmetrical grids for opt
 - __Home page is designed to be fully responsive. it serves two purpouses:__
     - Welcome screen - HTML, CSS and JS code checking/adding new Player.
     - Game Rules - HTML and CSS
+    - Social links
 
 
 Mobile first:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-login-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/workspace/black-jack-js/assets/other/welcome-mobile-screen.png)
-
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-login-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-mobile-screen.png)
 
 Large display:
 
 
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-login-screen.png)
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/workspace/black-jack-js/assets/other/welcome-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/welcome-screen.png)
 
 
 ***
 #### __Game Page__ 
-- __fetures __
-- __fetures __
-- __fetures __
-- __fetures __
+- __Top Bar__
+
+The Player can navigate back to the Welcome/Info Screen from the Game page through the 'Home' icon, top left.
+The Player can also open the High-scores screen from the Game page through the 'Star' icon, top right.
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-top-bar-screen.png) 
+
+
+- __Main Game View__
+
+- The Player is presented with the game area, pre-populated with playing cards backs and message (are in the  middle of the screen) inviting Player to start game.
+- The Blackjack game can be iniciated by either clicking >>>START NEW GAME<<< in messages area or by clicking 'START NEW GAME' button, the bottom of a screen.
+- The game message area is designed to not only show results of a round but also provides options for next move.
+- Two areas above and below message area are to display cards for both the Dealer and the PLayer. To make the game more exciting and less predictable, Dealer's first cards is being kept hidden and is not shown until the end of a round. 
+- Hit! and Stay options are available for the Player to decide whether he/she wants to draw another card or stay and finish the round. 
+- Once the round finishes, the Player is presented with results and message area shows the result of the round.
+- The score section, at the bottom of screen, shows the Player's sum of drawned cards, credit available and number of rounds played.
 
 
 Mobile first:
 
 
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-busted-mobile-screen.png)
-![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-mobile-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-start-mobile-screen.png) 
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-busted-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-mobile-screen.png) ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-mobile-screen.png)
 
 
 Large display:
@@ -176,5 +189,47 @@ Large display:
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-blackjack-screen.png) 
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-gameover-screen.png)
 
+
+***
+#### __Totals & High Scores Screen__ 
+
+- Once the game is over (when Player runs out of credit), his/hers score is then saved to 'High Scores' table and presented back. 
+
+
+
+Mobile first:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-info-mobile-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-scores-mobile-screen.png)
+
+
+Large display:
+
+
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-info-screen.png)
+![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/game-high-scores-screen.png)
+
+
+***
+
+## __Technologies Used__
+
+- [HTML5](https://html.spec.whatwg.org/) - provides content and structure 
+- [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides styling 
+- [JS] (https://www.w3.org/standards/webdesign/script) - adds functionality to the game.
+- [Balsamiq](https://balsamiq.com/) - for wireframes
+- [Eagle](https://en.eagle.cool/) - to collect, search and organize your design files in a logical way and all in one place
+- [Font Awesome](https://fontawesome.com/) - multiple icons implemented throughout the site from font awesome version 5
+- [Google Fonts](https://fonts.google.com/) - All three fonts used in the website imported from here 
+- [CSS Gradient](https://cssgradient.io/) - created a gradient background for websites
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - used extensively to experiment with grid, flexbox and general responsiveness
+- [Gitpod](https://www.gitpod.io/) - used to used to create and host the website
+- [Github](https://github.com/) - used to deploy the website 
+- [Am I Responsive](https://ui.dev/amiresponsive) - to create an image displaying the home page on various devices 
+- [Grammarly](https://app.grammarly.com/) - to make writing clear and engaging as well as eliminate grammar errors
+- [Favicon](https://favicon.io/) - to make icon
+- [ILovePDF](https://www.ilovepdf.com/) - to convers fireframes from pdf to png
+- [COMPRESSOR](https://compressor.io/) - to compress images 
 
 ***
