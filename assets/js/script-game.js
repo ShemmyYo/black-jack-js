@@ -228,7 +228,7 @@ function saveHighScore(){
     localStorage.setItem('highScores', JSON.stringify(highScores)); 
     localStorage.setItem("bj-credit", 3);
     localStorage.setItem("bj-round", 0);
-    bttnHighScores.style.display = "block";    
+    bttnHighScores.style.display = "inline";    
 }
 
 // Function which opens side box and displays High Scores
