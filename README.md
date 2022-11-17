@@ -286,6 +286,16 @@ Large display:
 
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/js-test-index.png) __results for Index Page__
 ***
+
+__Five unused variables__
+- 124	hit
+- 226	showHighScores
+- 234	hideScores
+- 238	clearScores
+- 243	restartGame
+
+__All 5 unused variables have actually been used in game.html as onclick__
+
 ![image](https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/js-test-game.png) __results for Game Page__
 
 

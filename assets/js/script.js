@@ -6,7 +6,6 @@ const loginBttnChangePlayerEl = document.getElementById("change-player");
 const loginNewPlayerBoxEl = document.getElementById("player-new-name-empty");
 const loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
 
-// On Load 
 window.onload = function() {
     validatePlayer();
 };
