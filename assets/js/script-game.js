@@ -203,7 +203,7 @@ function beforeRestart() {
     }
 }
 
-//Function that creates object and array of name/round/score/time???
+//Function that creates object and array of name/round/score/time. Function is called from game.html file
 function saveHighScore(){
     let nowDate = new Date();
     let scoreDate = nowDate.toLocaleString();  
@@ -222,7 +222,7 @@ function saveHighScore(){
     bttnHighScores.style.display = "inline";    
 }
 
-// Function which opens side box and displays High Scores
+// Function which opens side box and displays High Scores. Function is called from game.html file, onclick
 function showHighScores() {
     scoresWindow.style.display = "block";
     scoresList.innerHTML =
@@ -231,15 +231,18 @@ function showHighScores() {
     }).join('');
 }
 
+//Function is called from game.html file, onclick
 function hideScores() {
     scoresWindow.style.display = "none";
 }
 
+//Function is called from game.html file, onclick
 function clearScores() {
     localStorage.removeItem("highScores");
     location.reload(false);
 }
 
+//Function is called from game.html file, onclick
 function restartGame() {
     blackjackEl.style.display = "none";
     bustedEl.style.display = "none";
