@@ -156,8 +156,8 @@ function hit() {
 function stay() {
     document.getElementById("hidden").src = "./assets/images/deck/" + hidden + ".png";
     if (playerSum === 21) {
-        credit += 5;
-        message = "Round: " + round +" - Congratulations!!!<br><br>Credit +5!";
+        credit += 3;
+        message = "Round: " + round +" - Congratulations!!!<br><br>Credit +3!";
         blackjackEl.style.display = "flex";
         victorySound.play();
     } else if (playerSum > 21) {
