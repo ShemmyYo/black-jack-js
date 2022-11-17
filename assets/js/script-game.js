@@ -1,13 +1,13 @@
 // GAME Page DOM Elements
 const dealerSumEl = document.getElementById("dealer-sum");
-const dealerNameEl = document.getElementById("dealer-name-h2");
+//const dealerNameEl = document.getElementById("dealer-name-h2");
 const playerNameEl = document.getElementById("player-name-h2");
 
 // GAME messages Elements
 const cardsAtStart1 = document.getElementById("cards-at-start1");
 const cardsAtStart2 = document.getElementById("cards-at-start2");
 const cardsAtStart3 = document.getElementById("cards-at-start3");
-const messageBox = document.getElementById("inner-game-box-msg");
+//const messageBox = document.getElementById("inner-game-box-msg");
 const blackjackEl = document.getElementById("blackjack-el");
 const bustedEl = document.getElementById("busted-el");
 const gameOverEl = document.getElementById("game-over-el");
@@ -24,14 +24,14 @@ const bttnReset = document.getElementById("bttn-reset");
 const bttnHighScores = document.getElementById("bttn-high-scores");
 
 // High Scores Elements
-const startGameAgainBtn = document.getElementById("startGameAgain");
-const scoresBgWraper = document.getElementById("scores-bg-wraper");
+//const startGameAgainBtn = document.getElementById("startGameAgain");
+//const scoresBgWraper = document.getElementById("scores-bg-wraper");
 const scoresList = document.getElementById("scores-list-style");
 let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // High Scores Buttons
-const bttnSave = document.getElementById("bttn-save-score");
-const bttnClearScores = document.getElementById("bttn-clear-score");
+//const bttnSave = document.getElementById("bttn-save-score");
+//const bttnClearScores = document.getElementById("bttn-clear-score");
 const scoresWindow = document.getElementById("scores-wraper");
 
 //sounds
@@ -39,13 +39,13 @@ const defeatSound = new Audio('assets/sounds/sfx-defeat.mp3');
 const victorySound = new Audio('assets/sounds/sfx-victory.mp3');
 
 // Variables
-let cards;
+//let cards;
 let cardsDeck;
 let hidden;
 let dealerSum = 0;
 let playerSum = 0;
-let hasBlackJack = false;
-let howManyBlackJaks = 0;
+//let hasBlackJack = false;
+//let howManyBlackJaks = 0;
 let round = localStorage.getItem("bj-round");
 round = parseInt(round);
 let credit = localStorage.getItem("bj-credit");
@@ -228,7 +228,7 @@ function saveHighScore(){
     localStorage.setItem('highScores', JSON.stringify(highScores)); 
     localStorage.setItem("bj-credit", 3);
     localStorage.setItem("bj-round", 0);
-    bttnHighScores.display.style = "block";    
+    bttnHighScores.style.display = "block";    
 }
 
 // Function which opens side box and displays High Scores

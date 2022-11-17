@@ -6,12 +6,8 @@ const loginBttnChangePlayerEl = document.getElementById("change-player");
 const loginNewPlayerBoxEl = document.getElementById("player-new-name-empty");
 const loginOldPlayerBoxEl = document.getElementById("player-old-name-empty");
 
-//sounds
-const shuffleSound = new Audio('assets/sounds/sfx-shuffling-cards.mp3');
-
 // On Load 
 window.onload = function() {
-    shuffleSound.play();
     validatePlayer();
 };
 
@@ -24,10 +20,7 @@ function validatePlayer() {
         loginOldPlayerBoxEl.style.display = "inline";
         localStorage.setItem("bj-credit", 3);
         localStorage.setItem("bj-round", 0);
-  
-    } else {
-        addPlayer();
-   }
+    } 
 }
 
 // Function removing Player from local memory

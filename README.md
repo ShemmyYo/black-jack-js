@@ -420,7 +420,7 @@ I sometimes applied principles within them to the site, after fully understandin
 
 ### __Media__
 
-- Favincon made with Favicon.io
+- Favicon made with Favicon.io
 - mp3 sounds downloaded from [fiftysounds.com](https://www.fiftysounds.com/royalty-free-music/game-defeat.html)
 
 ## __Acknowledgements__ 
