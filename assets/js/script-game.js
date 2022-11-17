@@ -223,7 +223,7 @@ function saveHighScore(){
     };
     highScores.push(score);
     highScores.sort((a,b) => {
-        return b.score - a.score;
+        return b.round - a.round;
     });
     localStorage.setItem('highScores', JSON.stringify(highScores)); 
     localStorage.setItem("bj-credit", 3);

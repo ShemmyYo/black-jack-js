@@ -659,7 +659,13 @@ button {
         border-bottom-right-radius: 48px;
     }
 
-    #social-links-scores,
+    #social-links-scores{
+        position: fixed;
+        bottom: 15px;
+        left: 0;
+        width: 50%;
+    }
+
     #social-links {
         position: fixed;
         bottom: 15px;
@@ -809,7 +815,7 @@ button {
         min-height: 500px;
         width: 90%;
         margin: 2% 0 -3% 2%;
-        padding: 5% 25px 5% 5%;
+        padding: 5% 0 5% 5%;
         background-color: var(--off-white);
         border: 1px solid #013200;
         border-top-left-radius: 16px;
@@ -843,7 +849,11 @@ button {
         font-size: 0.8rem;
     }
 
-    #bttn-start,
+    #bttn-start {
+        width: 95%;
+        margin: 2%;
+    }
+
     #bttn-hit,
     #bttn-stay,
     #bttn-reset,
@@ -852,7 +862,7 @@ button {
     #bttn-clear-score,
     #bttn-high-scores,
     #bttn-hide-scores{
-        width: 100%;
+        width: 95%;
         margin: 2%;
     }
 
