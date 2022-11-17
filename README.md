@@ -73,8 +73,8 @@ After reviewing 3 project ideas provided by Code Institute in their Assessment G
 ***
 
 ## __UX User Experience__
-Blackjack target user is anyone who enjois playing this classic card game. 
-The aim of Blackjack is to finish the game with a higher total than that of the dealer, without exceeding 21.
+The blackjack target user is anyone who enjoys playing this classic card game. 
+Blackjack aims to finish the game with a higher total than that of the dealer, without exceeding 21.
 
 ***
 
@@ -210,8 +210,8 @@ Large display:
 
 ***
 #### __Totals & High Scores Screen__ 
-    - Throughout the game, the Player is presented with the total sum of his/hers cards on hand, credit and number of rounds played.
-    - Once the game is over (when the Player runs out of credit), his/hers score is then saved to the 'High Scores' table and presented back. 
+- Throughout the game, the Player is presented with the total sum of his/hers cards on hand, credit and number of rounds played.
+- Once the game is over (when the Player runs out of credit), his/hers score is then saved to the 'High Scores' table and presented back. 
 
 
 
@@ -309,36 +309,33 @@ Large display:
 ***
 
 
-__Home Webpage__
+__Home Webpage:__
+- Verified that the Player is greeted with his/hers name or asked to provide a Player name.
+- Verified that Player-name completing input element is required before moving on to the game page.
+- Verified that 'Save Your Name' bttn does save the Player name and creates a basic profile with credits and rounds played being saved to local memory.
+- Verified that 'Change User' bttn appears when a Player-name is saved in local memory and by pressing, gives the option to delete Player data. 
+- Verified that 'Enter Blackjack' bttn appears after Player-name is successfully saved to local memory.
+- Verified that the zoom-in effect on all paragraphs on the page.
+- Verified that the sounds of shuffle is played correctly.
+- Verified the social links hover effect does work correctly.
+- Verified the social links open successfully on a separate webpage when clicked.
 
-Verified that the Player is greeted with his/hers name or asked to provide a Player name.
-Verified that Player-name completing input element is required before moving on to the game page.
-Verified that 'Save Your Name' bttn does save the Player name and creates a basic profile with credits and rounds played being saved to local memory.
-Verified that 'Change User' bttn appears when a Player-name is saved in local memory and by pressing, gives the option to delete Player data. 
-Verified that 'Enter Blackjack' bttn appears after Player-name is successfully saved to local memory.
-Verified that the zoom-in effect on all paragraphs on the page.
-Verified that the sounds of shuffle is played correctly.
-Verified the social links hover effect does work correctly.
-Verified the social links open successfully on a separate webpage when clicked.
+__Game Webpage:__
+- Verified that clicking the 'Home' icon on the top bar brought the user back to the home screen
+- Verified that clicking the 'Star' icon on the top bar allowed the user to open High-Scores
+- Verified that all buttons and/or clickable instructions work correctly.
+- Verified that the 'hidden' Dealer's card is hidden until the final results are shown.
+- Verified that the messages are displayed correctly and according to the game rules and results.
+- Verified that the scores are displayed at the bttm of the page and calculated correctly. 
+- Verified that the sound of the game over is played correctly.
+- Verified that on the game over, data is saved correctly and presented back to the Player.
 
-__Game Webpage__
-
-Verified that clicking the 'Home' icon on the top bar brought the user back to the home screen
-Verified that clicking the 'Star' icon on the top bar allowed the user to open High-Scores
-Verified that all buttons and/or clickable instructions work correctly.
-Verified that the 'hidden' Dealer's card is hidden until the final results are shown.
-Verified that the messages are displayed correctly and according to the game rules and results.
-Verified that the scores are displayed at the bttm of the page and calculated correctly. 
-Verified that the sound of the game over is played correctly.
-Verified that on the game over, data is saved correctly and presented back to the Player.
-
-__High-Scores__
-
-Verified that clicking the 'Home' icon on the top bar brought the user back to the home screen
-Verified that clicking the 'Star' icon on the top bar allowed the user to open High-Scores
-Verified that clicking 'Reset Game', 'Clear High Scores' and 'Close High Scores' work as per labels.
-Verified the social links hover effect does work correctly.
-Verified the social links appear on the high-scores page and open successfully on a separate webpage when clicked.
+__High-Scores:__
+- Verified that clicking the 'Home' icon on the top bar brought the user back to the home screen
+- Verified that clicking the 'Star' icon on the top bar allowed the user to open High-Scores
+- Verified that clicking 'Reset Game', 'Clear High Scores' and 'Close High Scores' work as per labels.
+- Verified the social links hover effect does work correctly.
+- Verified the social links appear on the high-scores page and open successfully on a separate webpage when clicked.
 
 
 ***
@@ -402,13 +399,10 @@ Alternatively, if using Gitpod, you can click below to create your workspace usi
 
 ### __Code__
 
--
--
--
--
+- [Scrimba JS](https://www.youtube.com/watch?v=jS4aFq5-91M&list=PLvzs_z0mfNiTyI3WKIsKSBJqh7C856W4Q&index=3&t=7075s)
+- [Kenny Yip Coding](https://www.youtube.com/watch?v=bMYCWccL-3U)
 
 Throughout the building process I found many helpful tutorials online.
-
 I sometimes applied principles within them to the site, after fully understanding their code and modifying to fit the site's needs.
 
 ### __Design__
@@ -416,23 +410,23 @@ I sometimes applied principles within them to the site, after fully understandin
 - Design files incl. content, references and images were collected and organised with [Eagle](https://en.eagle.cool/)
 - Wireframes were made using [Balsamiq](https://balsamiq.com/)
 - Colour scheme was chosen with <img height="12" src="https://github.com/ShemmyYo/black-jack-js/blob/main/assets/other/colormind-logo.png"> [Colormind](http://colormind.io)
-- Gradient backgrounds were generated with [CSS Gradient](https://cssgradient.io/) - happy little website and free tool that lets you create a gradient background
+- Gradient buttons were generated with [CSS Gradient](https://cssgradient.io/) - happy little website and free tool that lets you create a gradient background
 - The two fonts used across the site were imported from [Google Fonts](https://fonts.google.com/)
 
 ### __Content__
 
-- 
+- Instructions borrowed from [blackjackapprenticeship.com](https://www.blackjackapprenticeship.com/how-to-play-blackjack/)
+- Playing cards have been downloaded from [ImKennyYip](https://github.com/ImKennyYip/black-jack/tree/master/cards)
 
 ### __Media__
 
-- All photos used on throughout the site are from and used under the [stock.adobe.com](https://stock.adobe.com/) license
 - Favincon made with Favicon.io
+- mp3 sounds downloaded from [fiftysounds.com](https://www.fiftysounds.com/royalty-free-music/game-defeat.html)
 
 ## __Acknowledgements__ 
 
 This website was executed and completed as a Portfolio 2 Project for the Full Stack Software Developer Diploma at [Code Institute](https://codeinstitute.net/)
 
-
-Big thank you to [Harry Dhillon](https://github.com/Harry-Leepz), my mentor who provided me with guide and excellent feedback throughout the project
+As always, big thank you to [Harry Dhillon](https://github.com/Harry-Leepz), my mentor who provided me with guide and excellent feedback throughout the project
 
 Shemmy, 2022
